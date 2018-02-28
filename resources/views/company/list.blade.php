@@ -5,6 +5,16 @@
 <div class="container">
   <div class="row">
     <div class="col">
+
+      @if (session('status'))
+          <div id="alert" class="alert alert-success alert-dismissible fade show" role="success">
+            {{ session('status') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+      @endif
+
       <a href="{{ route('company.create') }}" class="btn btn-success mb-4">
         Create New Company
       </a>
@@ -15,6 +25,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Website</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
@@ -25,6 +36,10 @@
                 <td>{{$company->name}}</td>
                 <td>{{$company->email}}</td>
                 <td>{{$company->website}}</td>
+                <td>
+                  <button class="btn btn-primary btn-sm">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
               </tr>
               @endforeach
             </tbody>
@@ -34,3 +49,9 @@
 </div>
 
 @endsection
+
+<script>
+  window.setTimeout(function() {
+    $(".alert").alert('close');
+  }, 5000);
+</script>

@@ -25,7 +25,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        return view('company.create');
     }
 
     /**
@@ -36,7 +36,19 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:companies'
+        ]);
+
+        $company = new Company;
+        $company->name = $request->name;
+        $company->email = $request->email;
+        $company->website = $request->website;
+        $company->save();
+
+        return redirect('company')->with('status', 'Company created!');
     }
 
     /**
