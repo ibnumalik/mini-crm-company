@@ -37,8 +37,12 @@
                 <td>{{$company->email}}</td>
                 <td>{{$company->website}}</td>
                 <td>
-                  <button class="btn btn-primary btn-sm">Edit</button>
-                  <button class="btn btn-danger btn-sm">Delete</button>
+                  <a href="{{ route('company.edit', ['company' => $company->id]) }}" class="btn btn-primary btn-sm">Edit</a>
+                  <form method="POST" action="{{ route('company.destroy', ['company' => $company->id]) }}" class="form--button">
+                    @method('DELETE')
+                    @csrf
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                  </form>
                 </td>
               </tr>
               @endforeach
