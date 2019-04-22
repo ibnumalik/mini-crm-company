@@ -22,19 +22,19 @@
           <hr>
           <div class="form-group">
             <label for="companyName">Name</label>
-            <input type="text" class="form-control" id="companyName" name="name" value="{{ old('name') }}">
+            <input type="text" class="form-control" id="companyName" name="name" value="{{ old('name', $company->name) }}">
           </div>
           <div class="form-group">
             <label for="companyEmail">Email</label>
-            <input type="email" class="form-control" id="companyEmail" name="email" value="{{ old('email') }}">
+            <input type="email" class="form-control" id="companyEmail" name="email" value="{{ old('email', $company->email) }}">
           </div>
           <div class="form-group">
             <label for="companyLogo">Logo</label>
-            <input type="file" class="form-control-file" id="companyLogo" name="logo" value="{{ old('logo') }}">
+            <input type="file" class="form-control-file" id="companyLogo" name="logo">
           </div>
           <div class="form-group">
             <label for="companyWebsite">Website</label>
-            <input type="text" class="form-control" id="companyWebsite" name="website" value="{{ old('website') }}">
+            <input type="text" class="form-control" id="companyWebsite" name="website" value="{{ old('website', $company->website) }}">
           </div>
           <button class="btn btn-success" type="submit">Create</button>
         </form>
