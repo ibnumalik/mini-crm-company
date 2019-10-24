@@ -6,5 +6,5 @@ This is an admin panel to manage companies and their employees.
 
 - [x] Scaffold the login using laravel auth maker.
 - [x] Seed user table with admin user.
-- [ ] Create company model.
+- [x] Create company model.
 - [ ] Create employee model.

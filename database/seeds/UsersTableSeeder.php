@@ -12,7 +12,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         \App\User::updateOrCreate(
             [
                 'email' => 'admin@admin.com'
