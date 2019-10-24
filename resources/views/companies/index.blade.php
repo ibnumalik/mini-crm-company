@@ -2,8 +2,26 @@
 
 @section('content')
 <div class="container">
-    <h1>hello</h1>
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-sm">
+                <a href="{{ route('companies.create') }}" class="btn btn-primary">
+                    Create new company
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <h1>Company List</h1>
+                <ol>
+                    @foreach ($companies as $company)
+                    <li>{{$company->name}}</li>
+                    @endforeach
+                </ol>
+            </div>
+        </div>
+    </div>
 </div>
 
 @endsection
-
