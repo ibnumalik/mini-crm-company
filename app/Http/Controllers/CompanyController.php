@@ -15,6 +15,7 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = Company::all();
+
         return view('companies.index', ['companies' => $companies]);
     }
 
@@ -25,7 +26,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        return view('companies.form');
     }
 
     /**
@@ -36,7 +37,15 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'website' => 'required'
+        ]);
+
+        Company::create($request->all());
+
+        return redirect()->route('companies.index');
     }
 
     /**
