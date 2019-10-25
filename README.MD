@@ -10,7 +10,7 @@ This is an admin panel to manage companies and their employees.
   - [x] View company.
   - [x] Create company.
   - [x] Update company.
-  - [ ] Delete company.
+  - [x] Delete company.
 - [ ] Employee.
   - [ ] View employee.
   - [ ] Create employee.
