@@ -67,7 +67,7 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        //
+        return view('companies.form', ['company' => $company]);
     }
 
     /**
@@ -79,7 +79,9 @@ class CompanyController extends Controller
      */
     public function update(Request $request, Company $company)
     {
-        //
+        $company->update($request->all());
+
+        return redirect()->route('companies.show', ['company' => $company->id]);
     }
 
     /**
