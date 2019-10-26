@@ -12,4 +12,9 @@ class Company extends Model
      * @var array
      */
     protected $fillable = ['name', 'email', 'website'];
+
+    public function employees()
+    {
+        return $this->hasMany('App\Employee');
+    }
 }
