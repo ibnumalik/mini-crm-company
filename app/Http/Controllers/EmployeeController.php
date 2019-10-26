@@ -72,7 +72,9 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        //
+        $companies = Company::all();
+
+        return view('employees.form', compact('employee', 'companies'));
     }
 
     /**
@@ -84,7 +86,17 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, Employee $employee)
     {
-        //
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'company_id' => 'required'
+        ]);
+
+        $employee->update($request->all());
+
+        return redirect()->route('employees.index');
     }
 
     /**

@@ -14,5 +14,5 @@ This is an admin panel to manage companies and their employees.
 - [ ] Employee.
   - [x] View employee.
   - [x] Create employee.
-  - [ ] Update employee.
+  - [x] Update employee.
   - [ ] Delete employee.
