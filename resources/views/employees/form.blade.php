@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <h1>{{ $employee ?? '' ? 'Edit ' . $employee->name : 'Create new employee' }}</h1>
+            <h1>{{ $employee ?? '' ? 'Edit ' . $employee->first_name . ' ' . $employee->last_name  : 'Create new employee' }}</h1>
         </div>
     </div>
     <div class="row">
