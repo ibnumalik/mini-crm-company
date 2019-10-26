@@ -13,6 +13,6 @@ This is an admin panel to manage companies and their employees.
   - [x] Delete company.
 - [ ] Employee.
   - [x] View employee.
-  - [ ] Create employee.
+  - [x] Create employee.
   - [ ] Update employee.
   - [ ] Delete employee.
