@@ -6,13 +6,13 @@ This is an admin panel to manage companies and their employees.
 
 - [x] Scaffold the login using laravel auth maker.
 - [x] Seed user table with admin user.
-- [ ] Company.
+- [x] Company.
   - [x] View company.
   - [x] Create company.
   - [x] Update company.
   - [x] Delete company.
 - [ ] Employee.
-  - [ ] View employee.
+  - [x] View employee.
   - [ ] Create employee.
   - [ ] Update employee.
   - [ ] Delete employee.
