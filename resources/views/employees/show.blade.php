@@ -24,11 +24,6 @@
             <h1>{{ $employee->first_name . ' ' . $employee->last_name }}</h1>
 
             <div class="employee-item">
-                <p class="mb-0"> Work at </p>
-                {{-- <p> {{$employee->phone}} </p> --}}
-            </div>
-
-            <div class="employee-item">
                 <p class="mb-0">
                     Phone
                 </p>
@@ -44,6 +39,14 @@
                         {{$employee->email}}
                     </a>
                 </p>
+            </div>
+
+            <div class="employee-item">
+                <p class="mb-0"> Employer </p>
+                <p>
+                    <a href="{{ route('companies.show', ['company' => $employee->company->id]) }}">
+                        {{$employee->company->name}} </p>
+                </a>
             </div>
         </div>
     </div>
