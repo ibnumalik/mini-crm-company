@@ -22,10 +22,12 @@
             </div>
 
             <div class="d-flex align-items-center mb-4">
+                @if ($company->logo_path)
                 <img
                     width="25"
                     class="mr-2"
-                    src="{{ url('storage/'.$company->logo_path) }}" alt="{{$company->name}}">
+                    src="{{ url('storage/images/'.$company->logo_path) }}" alt="{{$company->name}}">
+                @endif
                 <h1 class="mb-0">{{ $company->name }}</h1>
             </div>
 

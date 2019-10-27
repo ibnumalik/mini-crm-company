@@ -53,7 +53,7 @@ class CompanyController extends Controller
                 return redirect()->back()->with('invalid_file_error', 'Invalid File');
             }
 
-            Storage::disk('public')->put($logo_name, File::get($logo));
+            Storage::disk('image')->put($logo_name, File::get($logo));
         }
 
         Company::create(array_merge(
