@@ -24,7 +24,7 @@
             <h1>{{ $company->name }}</h1>
 
             <div class="company-item">
-                <p class="mb-0">
+                <p class="mb-0 font-weight-bold">
                     Website
                 </p>
                 <p>
@@ -35,15 +35,27 @@
             </div>
 
             <div class="company-item">
-                <p class="mb-0">
-                    Email
-                </p>
+                <p class="mb-0 font-weight-bold"> Email </p>
                 <p>
                     <a href="mailto:{{$company->email}}">
                         {{$company->email}}
                     </a>
                 </p>
             </div>
+
+            <div class="company-item">
+                <p class="mb-0 font-weight-bold">Employees</p>
+                <ol>
+                    @foreach ($company->employees as $employee)
+                    <li>
+                        <a href="{{ route('employees.show', ['employee' => $employee->id]) }}">
+                            {{$employee->first_name}}
+                        </a>
+                    </li>
+                    @endforeach
+                </ol>
+            </div>
+
         </div>
     </div>
 </div>
