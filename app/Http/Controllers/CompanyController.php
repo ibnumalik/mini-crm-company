@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\Http\Requests\StoreCompany;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -37,14 +38,8 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCompany $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'website' => 'required'
-        ]);
-
         $logo = $request->file('logo');
         $logo_name = $logo->getClientOriginalName() . '.' . $logo->getClientOriginalExtension();
 
@@ -93,7 +88,7 @@ class CompanyController extends Controller
      * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(StoreCompany $request, Company $company)
     {
         $company->update($request->all());
 
