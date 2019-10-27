@@ -21,7 +21,13 @@
                 </form>
             </div>
 
-            <h1>{{ $company->name }}</h1>
+            <div class="d-flex align-items-center mb-4">
+                <img
+                    width="25"
+                    class="mr-2"
+                    src="{{ url('storage/'.$company->logo_path) }}" alt="{{$company->name}}">
+                <h1 class="mb-0">{{ $company->name }}</h1>
+            </div>
 
             <div class="company-item">
                 <p class="mb-0 font-weight-bold">

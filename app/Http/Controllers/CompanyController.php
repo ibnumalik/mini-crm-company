@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class CompanyController extends Controller
 {
@@ -43,7 +45,21 @@ class CompanyController extends Controller
             'website' => 'required'
         ]);
 
-        Company::create($request->all());
+        $logo = $request->file('logo');
+        $logo_name = $logo->getClientOriginalName() . '.' . $logo->getClientOriginalExtension();
+
+        if ($request->hasFile('logo')) {
+            if (!$logo->isValid()) {
+                return redirect()->back()->with('invalid_file_error', 'Invalid File');
+            }
+
+            Storage::disk('public')->put($logo_name, File::get($logo));
+        }
+
+        Company::create(array_merge(
+            $request->all(),
+            ['logo_path' => $logo_name]
+        ));
 
         return redirect()->route('companies.index');
     }
