@@ -71,11 +71,15 @@
                         @enderror
                     </div>
 
+                    @php $employee_company = $employee->company->id ?? ''; @endphp
                     <div class="form-group">
                         <label for="company_id">Company</label>
                         <select name="company_id" id="company_id" class="form-control">
                             @foreach ($companies as $company)
-                                <option value="{{$company->id}}" @if($company->id === $employee->company->id) selected @endif>
+                                <option
+                                    value="{{$company->id}}"
+                                    @if($company->id === $employee_company) selected @endif
+                                >
                                     {{$company->name}}
                                 </option>
                             @endforeach
