@@ -25,6 +25,9 @@
                 </ol>
             </div>
         </div>
+
+        {{ $companies->links() }}
+
     </div>
 </div>
 

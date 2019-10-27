@@ -25,6 +25,8 @@
                 </ol>
             </div>
         </div>
+
+        {{ $employees->links() }}
     </div>
 </div>
 

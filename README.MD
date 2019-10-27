@@ -19,5 +19,5 @@ This is an admin panel to manage companies and their employees.
 - [x] Database migration with default seed for companies and employee.
     - `php artisan migrate --seed`
 - [x] Use generated resource controllers to handle companies and employees routes.
-- [ ] Store company logo in `storage/app/public` directory.
-- [ ] Paginate companies/employees list to 10 entries per page.
+- [x] Store company logo in `storage/app/public` directory.
+- [x] Paginate companies/employees list to 10 entries per page.
