@@ -44,6 +44,18 @@
                     @enderror
                 </div>
 
+                <div class="form-group">
+                    <label for="logo">Logo</label>
+                    <input
+                        class="form-control-file"
+                        type="file"
+                        name="logo_path"
+                        id="logo"
+                        @change="companyLogoFileChanged"
+                    >
+                    <img class="mt-2 mw-100" v-bind:src="companyLogoPreview" alt="Logo Preview">
+                </div>
+
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
