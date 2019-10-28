@@ -4,6 +4,9 @@
 // Variables
 @import "variables";
 
+@import '~bootstrap';
+@import '~bootstrap-vue';
+
 .invalid-feedback {
     display: block;
 }

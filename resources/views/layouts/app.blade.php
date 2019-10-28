@@ -21,67 +21,48 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+
+        <b-navbar toggleable="lg">
+            <b-container>
+                <b-navbar-brand href="{{url('/')}}">
                     CRM
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                </b-navbar-brand>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                <b-collapse id="nav-collapse" is-nav>
+                    <b-navbar-nav class="ml-auto">
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
+                            <b-nav-item href="{{ route('login') }}">{{ __('Login') }}</b-nav-item>
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                                    <a class="dropdown-item" href="{{ route('home') }}">
-                                        Dashboard
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('companies.index') }}">
-                                        Companies
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('employees.index') }}">
-                                        Employees
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                        <b-nav-item-dropdown text="{{ Auth::user()->name }}">
+                            <b-dropdown-item href="{{ route('home') }}">
+                                Dashboard
+                            </b-dropdown-item>
+                            <b-dropdown-item href="{{ route('companies.index') }}">
+                                Companies
+                            </b-dropdown-item>
+                            <b-dropdown-item href="{{ route('employees.index') }}">
+                                Employees
+                            </b-dropdown-item>
+                            <b-dropdown-divider></b-dropdown-divider>
+                            <b-dropdown-item v-on:click="logout">Logout</b-dropdown-item>
+                            <form
+                                ref="logoutForm"
+                                class="d-none"
+                                action="{{route('logout')}}"
+                                method="post"
+                            >
+                                @csrf
+                            </form>
+                        </b-nav-item-dropdown>
                         @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                    </b-navbar-nav>
+                </b-collapse>
+
+            </b-container>
+        </b-navbar>
 
         <main class="py-4">
             @yield('content')

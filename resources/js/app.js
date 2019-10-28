@@ -1,20 +1,16 @@
-window.Vue = require("vue");
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-Vue.component(
-    "example-component",
-    require("./components/ExampleComponent.vue").default
-);
+import Vue from "vue";
+import {
+    BContainer,
+    BNavbar,
+    BNavbarBrand,
+    BNavbarToggle,
+    BCollapse,
+    BNavbarNav,
+    BNavItemDropdown,
+    BDropdownItem,
+    BDropdownDivider,
+    BNavItem
+} from "bootstrap-vue";
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -26,6 +22,18 @@ const app = new Vue({
     el: "#app",
     data: {
         companyLogoPreview: null
+    },
+    components: {
+        BNavbar,
+        BNavbarBrand,
+        BContainer,
+        BNavbarToggle,
+        BCollapse,
+        BNavbarNav,
+        BNavItemDropdown,
+        BDropdownItem,
+        BDropdownDivider,
+        BNavItem
     },
     methods: {
         companyLogoFileChanged(event) {
@@ -39,6 +47,10 @@ const app = new Vue({
 
                 reader.readAsDataURL(logo[0]);
             }
+        },
+        logout(event) {
+            event.preventDefault();
+            this.$refs.logoutForm.submit();
         }
     }
 });
