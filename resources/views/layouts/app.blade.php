@@ -27,7 +27,7 @@
         <main class="main-app">
             @include('app.header')
 
-        @include('app.sidebar')
+            @include('app.sidebar')
 
             @yield('content')
         </main>
