@@ -1,17 +1,24 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Nunito");
 
+// Vendor styling
+@import "~bootstrap";
+@import "~bootstrap-vue";
+
 // Variables
 @import "variables";
 
 @import "~compass-mixins";
 
+// Components
+@import "components/sidebar";
 
 .invalid-feedback {
     display: block;
 }
 
-.company, .employee {
+.company,
+.employee {
     .btn {
         min-width: 100px;
     }
