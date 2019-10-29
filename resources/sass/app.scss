@@ -8,9 +8,9 @@
 // Variables
 @import "variables";
 
-@import "~compass-mixins";
 
 // Components
+@import "components/navbar";
 @import "components/sidebar";
 
 .invalid-feedback {
