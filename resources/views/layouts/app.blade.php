@@ -22,6 +22,9 @@
 <body>
     <div id="app">
 
+
+        @include('app.sidebar')
+
         <b-navbar toggleable="lg">
             <b-container>
                 <b-navbar-brand href="{{url('/')}}">
