@@ -4,8 +4,8 @@
 // Variables
 @import "variables";
 
-@import '~bootstrap';
-@import '~bootstrap-vue';
+@import "~compass-mixins";
+
 
 .invalid-feedback {
     display: block;
