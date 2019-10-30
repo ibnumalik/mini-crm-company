@@ -9,17 +9,23 @@
         @else
 
         <b-navbar-nav class="header-links">
-            <b-nav-item href="#"><i class="mdi mdi-image-filter"></i>Gallery</b-nav-item>
-            <b-nav-item href="#" active><i class="mdi mdi-email-outline"></i>Inbox</b-nav-item>
-            <b-nav-item href="#"><i class="mdi mdi-calendar"></i>Calendar</b-nav-item>
+            <b-nav-item href="#">
+                <image-filter-icon></image-filter-icon> Gallery
+            </b-nav-item>
+            <b-nav-item href="#" active>
+                <email-outline-icon></email-outline-icon> Inbox
+            </b-nav-item>
+            <b-nav-item href="#">
+                <calendar-icon></calendar-icon> Calendar
+            </b-nav-item>
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
             <b-nav-item-dropdown right class="preview-list">
                 <template slot="button-content">
                     <div class="count-indicator">
-                        <i class="icon mdi mdi-email-variant"></i>
-                        <span class="count">7</span>
+                        <email-variant-icon></email-variant-icon>
+                        {{-- <span class="count">7</span> --}}
                     </div>
                 </template>
                 <b-dropdown-item class="preview-item" href="#">
@@ -30,7 +36,7 @@
                 <b-dropdown-item class="preview-item" href="#">
                     <div class="preview-thumbnail">
                         <div class="preview-icon bg-success">
-                            <i class="mdi mdi-alert-circle-outline mx-0"></i>
+                            <alert-circle-outline-icon class="mx-0"></alert-circle-outline-icon>
                         </div>
                     </div>
                     <div class="preview-item-content">
@@ -43,7 +49,7 @@
                 <b-dropdown-item class="preview-item" href="#">
                     <div class="preview-thumbnail">
                         <div class="preview-icon bg-warning">
-                            <i class="mdi mdi-comment-text-outline mx-0"></i>
+                            <comment-text-outline-icon fill-color="#fff"></comment-text-outline-icon>
                         </div>
                     </div>
                     <div class="preview-item-content">
@@ -56,7 +62,7 @@
                 <b-dropdown-item class="preview-item" href="#">
                     <div class="preview-thumbnail">
                         <div class="preview-icon bg-info">
-                            <i class="mdi mdi-email-outline mx-0"></i>
+                            <email-outline-icon></email-outline-icon>
                         </div>
                     </div>
                     <div class="preview-item-content">
@@ -70,7 +76,7 @@
             <b-nav-item-dropdown right>
                 <template slot="button-content">
                     <div class="count-indicator">
-                        <i class="icon mdi mdi-bell-ring"></i>
+                        <bell-ring-icon></bell-ring-icon>
                         <span class="count">4</span>
                     </div>
                 </template>
