@@ -19,6 +19,9 @@ import EmailVariantIcon from "icons/EmailVariant";
 import AlertCircleOutlineIcon from "icons/AlertCircleOutline";
 import CommentTextOutlineIcon from "icons/CommentTextOutline";
 import BellRingIcon from "icons/BellRing";
+import DomainIcon from "icons/Domain";
+import AccountMultipleIcon from "icons/AccountMultiple";
+import ViewDashboardIcon from "icons/ViewDashboard";
 
 import "icons/styles.css";
 
@@ -29,7 +32,10 @@ const icons = {
     EmailVariantIcon,
     AlertCircleOutlineIcon,
     CommentTextOutlineIcon,
-    BellRingIcon
+    BellRingIcon,
+    DomainIcon,
+    AccountMultipleIcon,
+    ViewDashboardIcon
 };
 
 /**

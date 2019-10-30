@@ -8,17 +8,6 @@
         <b-nav-item href="{{ route('login') }}">{{ __('Login') }}</b-nav-item>
         @else
 
-        <b-navbar-nav class="header-links">
-            <b-nav-item href="#">
-                <image-filter-icon></image-filter-icon> Gallery
-            </b-nav-item>
-            <b-nav-item href="#" active>
-                <email-outline-icon></email-outline-icon> Inbox
-            </b-nav-item>
-            <b-nav-item href="#">
-                <calendar-icon></calendar-icon> Calendar
-            </b-nav-item>
-        </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
             <b-nav-item-dropdown right class="preview-list">
