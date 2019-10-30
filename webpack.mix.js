@@ -15,4 +15,15 @@ require("laravel-mix-purgecss");
 mix.js("resources/js/app.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
     .browserSync(process.env.MIX_APP_DOMAIN)
-    .purgeCss();
+    .purgeCss()
+    .webpackConfig({
+        resolve: {
+            alias: {
+                icons: path.resolve(
+                    __dirname,
+                    "node_modules/vue-material-design-icons"
+                )
+            },
+            extensions: [".vue"]
+        }
+    });

@@ -12,7 +12,25 @@ import {
     BNavItem,
     VBToggle
 } from "bootstrap-vue";
+import ImageFilterIcon from "icons/ImageFilter";
+import EmailOutlineIcon from "icons/EmailOutline";
+import CalendarIcon from "icons/Calendar";
+import EmailVariantIcon from "icons/EmailVariant";
+import AlertCircleOutlineIcon from "icons/AlertCircleOutline";
+import CommentTextOutlineIcon from "icons/CommentTextOutline";
+import BellRingIcon from "icons/BellRing";
 
+import "icons/styles.css";
+
+const icons = {
+    ImageFilterIcon,
+    EmailOutlineIcon,
+    CalendarIcon,
+    EmailVariantIcon,
+    AlertCircleOutlineIcon,
+    CommentTextOutlineIcon,
+    BellRingIcon
+};
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -36,9 +54,10 @@ const app = new Vue({
         BDropdownItem,
         BDropdownDivider,
         BNavItem,
+        ...icons
     },
     directives: {
-        'b-toggle': VBToggle
+        "b-toggle": VBToggle
     },
     methods: {
         companyLogoFileChanged(event) {
