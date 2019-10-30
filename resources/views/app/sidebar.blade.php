@@ -12,15 +12,15 @@
             </div>
         </li>
         <b-nav-item href="{{route('home')}}">
-            <img src="{{asset('images/menu_icons/01.png')}}" alt="menu icon" class="menu-icon">
+            <view-dashboard-icon class="menu-icon"></view-dashboard-icon>
             <span class="menu-title">Dashboard</span>
         </b-nav-item>
         <b-nav-item href="{{route('companies.index')}}">
-            <img class="menu-icon" src="{{asset('images/menu_icons/company.png')}}" alt="menu icon">
+            <domain-icon class="menu-icon"></domain-icon>
             <span class="menu-title">Companies</span>
         </b-nav-item>
         <b-nav-item href="{{route('employees.index')}}">
-            <img class="menu-icon" src="{{asset('images/menu_icons/employee.png')}}" alt="menu icon">
+            <account-multiple-icon class="menu-icon"></account-multiple-icon>
             <span class="menu-title">Employees</span>
         </b-nav-item>
     </ul>
