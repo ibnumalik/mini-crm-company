@@ -27,9 +27,13 @@
         <main class="main-app">
             @include('app.header')
 
-            @include('app.sidebar')
+            <b-container fluid class="page-body-wrapper">
+                @auth
+                @include('app.sidebar')
+                @endauth
 
-            @yield('content')
+                @yield('content')
+            </b-container>
         </main>
     </div>
 </body>
