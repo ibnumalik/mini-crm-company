@@ -4,12 +4,11 @@
         <b-navbar-brand href="{{url('/')}}"> crm </b-navbar-brand>
     </div>
     <b-collapse is-nav id="nav_collapse">
-        @guest
-        <b-nav-item href="{{ route('login') }}">{{ __('Login') }}</b-nav-item>
-        @else
-
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
+            @guest
+            <b-nav-item href="{{ route('login') }}">{{ __('Login') }}</b-nav-item>
+            @else
             <b-nav-item-dropdown right class="preview-list">
                 <template slot="button-content">
                     <div class="count-indicator">
@@ -75,9 +74,10 @@
                     @csrf
                 </form>
             </b-nav-item-dropdown>
-            <b-nav-item href="#"><img class="img-xs rounded-circle" src="../../assets/images/faces/face4.jpg"
-                    alt="profile image"></b-nav-item>
+            <b-nav-item href="#">
+                <img class="img-xs rounded-circle" src="../../assets/images/faces/face4.jpg" alt="profile image">
+            </b-nav-item>
+            @endguest
         </b-navbar-nav>
-        @endguest
     </b-collapse>
 </b-navbar>
