@@ -22,10 +22,14 @@ import BellRingIcon from "icons/BellRing";
 import DomainIcon from "icons/Domain";
 import AccountMultipleIcon from "icons/AccountMultiple";
 import ViewDashboardIcon from "icons/ViewDashboard";
+import CubeIcon from "icons/Cube";
+import AccountLockIcon from "icons/AccountLock";
 
 import "icons/styles.css";
 
 const icons = {
+    CubeIcon,
+    AccountLockIcon,
     ImageFilterIcon,
     EmailOutlineIcon,
     CalendarIcon,
