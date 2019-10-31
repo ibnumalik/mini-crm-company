@@ -2,12 +2,14 @@
     <ul class="nav">
         <li class="nav-item nav-profile">
             <div class="nav-link">
-                <div class="profile-image"> <img src="../../assets/images/faces/face4.jpg" alt="image" /> <span
-                        class="online-status online"></span> </div>
+                <div class="profile-image">
+                    {{-- <img src="../../assets/images/faces/face4.jpg" alt="image" /> --}}
+                    <span class="online-status online"></span>
+                </div>
                 <div class="profile-name">
-                    <p class="name">Richard V.Welsh</p>
-                    <p class="designation">Manager</p>
-                    <div class="badge badge-teal mx-auto mt-3">Online</div>
+                    <p class="name">{{ Auth::user()->name }}</p>
+                    {{-- <p class="designation">Manager</p> --}}
+                    {{-- <div class="badge badge-teal mx-auto mt-3">Online</div> --}}
                 </div>
             </div>
         </li>
