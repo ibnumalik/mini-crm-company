@@ -25,9 +25,9 @@
             <account-multiple-icon class="menu-icon"></account-multiple-icon>
             <span class="menu-title">Employees</span>
         </b-nav-item>
-        <b-nav-item href="{{route('employees.index')}}" class="mt-auto bg-secondary">
-            <account-multiple-icon class="menu-icon text-white hover-secondary"></account-multiple-icon>
-            <span class="menu-title text-white">Profile</span>
+        <b-nav-item href="{{route('employees.index')}}" class="mt-auto">
+            <account-multiple-icon class="menu-icon hover-secondary"></account-multiple-icon>
+            <span class="menu-title">Profile</span>
         </b-nav-item>
     </ul>
 </nav>
