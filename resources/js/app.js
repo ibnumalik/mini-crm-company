@@ -14,7 +14,10 @@ import {
     VBToggle,
     BListGroup,
     BListGroupItem,
-    BButton
+    BButton,
+    BCard,
+    BRow,
+    BCol
 } from "bootstrap-vue";
 import ImageFilterIcon from "icons/ImageFilter";
 import EmailOutlineIcon from "icons/EmailOutline";
@@ -43,10 +46,13 @@ const icons = {
     BellRingIcon,
     DomainIcon,
     AccountMultipleIcon,
-    ViewDashboardIcon,
+    ViewDashboardIcon
 };
 
 const bootstrap = {
+    BCol,
+    BRow,
+    BCard,
     BNav,
     BListGroup,
     BNavbar,
