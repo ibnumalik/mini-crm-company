@@ -30,13 +30,17 @@
         padding-top: 30px;
         height: 100%;
 
+        .collapse.show,
+        .collapsing {
+            background: $sidebar-light-menu-active-bg;
+        }
+
         .nav-item {
             .collapse {
                 z-index: 999;
             }
 
-            .collapse.show,
-            .collapsing {
+            &[aria-expanded="true"] {
                 background: $sidebar-light-menu-active-bg;
             }
 
@@ -47,10 +51,6 @@
                 white-space: nowrap;
                 height: $nav-link-height;
                 color: $sidebar-light-menu-color;
-
-                &[aria-expanded="true"] {
-                    background: $sidebar-light-menu-active-bg;
-                }
 
                 .menu-icon {
                     margin-right: 1.25rem;

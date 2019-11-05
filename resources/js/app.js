@@ -2,6 +2,7 @@ import Vue from "vue";
 import {
     BContainer,
     BNavbar,
+    BNav,
     BNavbarBrand,
     BNavbarToggle,
     BCollapse,
@@ -54,6 +55,7 @@ const app = new Vue({
         companyLogoPreview: null
     },
     components: {
+        BNav,
         BNavbar,
         BNavbarBrand,
         BContainer,

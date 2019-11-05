@@ -17,10 +17,20 @@
             <view-dashboard-icon class="menu-icon"></view-dashboard-icon>
             <span class="menu-title">Dashboard</span>
         </b-nav-item>
-        <b-nav-item href="{{route('companies.index')}}">
+        <b-nav-item v-b-toggle.company>
             <domain-icon class="menu-icon"></domain-icon>
             <span class="menu-title">Companies</span>
         </b-nav-item>
+        <b-collapse id="company">
+            <b-nav class="sub-menu">
+                <b-nav-item href="{{route('companies.index')}}">
+                    <span class="menu-title">List</span>
+                </b-nav-item>
+                <b-nav-item href="{{route('companies.create')}}">
+                    <span class="menu-title">Add</span>
+                </b-nav-item>
+            </b-nav>
+        </b-collapse>
         <b-nav-item href="{{route('employees.index')}}">
             <account-multiple-icon class="menu-icon"></account-multiple-icon>
             <span class="menu-title">Employees</span>
