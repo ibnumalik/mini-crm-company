@@ -29,8 +29,6 @@ import ViewDashboardIcon from "icons/ViewDashboard";
 import CubeIcon from "icons/Cube";
 import AccountLockIcon from "icons/AccountLock";
 
-import CrmSidebar from "./components/Sidebar";
-
 import "icons/styles.css";
 
 const icons = {
@@ -46,7 +44,6 @@ const icons = {
     DomainIcon,
     AccountMultipleIcon,
     ViewDashboardIcon,
-    CrmSidebar
 };
 
 const bootstrap = {
