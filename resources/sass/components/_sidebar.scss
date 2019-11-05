@@ -35,22 +35,32 @@
             background: $sidebar-light-menu-active-bg;
         }
 
-        .nav-item {
+        .nav-item,
+        .list-group {
             .collapse {
                 z-index: 999;
             }
 
-            &[aria-expanded="true"] {
-                background: $sidebar-light-menu-active-bg;
-            }
-
-            .nav-link {
+            .nav-link,
+            .sidebar-item {
                 align-items: center;
                 display: flex;
                 padding: $sidebar-menu-padding;
                 white-space: nowrap;
                 height: $nav-link-height;
                 color: $sidebar-light-menu-color;
+
+                &[aria-expanded="true"] {
+                    background: $sidebar-light-menu-active-bg;
+                }
+
+                &:hover {
+                    z-index: 1;
+                    color: #495057;
+                    cursor: pointer;
+                    text-decoration: none;
+                    background-color: #f8f9fa;
+                }
 
                 .menu-icon {
                     margin-right: 1.25rem;
@@ -95,6 +105,37 @@
 
                 &:hover {
                     color: darken($sidebar-light-menu-color, 5%);
+                }
+            }
+
+            &.sub-menu {
+                margin-bottom: 0;
+                padding: $sidebar-submenu-padding;
+
+                .list-group-item-action {
+                    color: $sidebar-light-submenu-color;
+                    padding: $sidebar-submenu-item-padding;
+                    font-size: $sidebar-submenu-font-size;
+                    line-height: 1;
+                    height: auto;
+
+                    &.active {
+                        color: $sidebar-light-menu-active-color;
+                        background: transparent;
+
+                        &:before {
+                            background: $sidebar-light-menu-active-color;
+                        }
+                    }
+
+                    &:hover {
+                        background: $sidebar-light-submenu-hover-bg;
+                        color: $sidebar-light-submenu-hover-color;
+
+                        &:before {
+                            background: $sidebar-light-submenu-hover-color;
+                        }
+                    }
                 }
             }
 
@@ -180,40 +221,6 @@
             }
         }
 
-        &.sub-menu {
-            margin-bottom: 0;
-            padding: $sidebar-submenu-padding;
-
-            .nav-item {
-                .nav-link {
-                    color: $sidebar-light-submenu-color;
-                    padding: $sidebar-submenu-item-padding;
-                    font-size: $sidebar-submenu-font-size;
-                    line-height: 1;
-                    height: auto;
-
-                    &.active {
-                        color: $sidebar-light-menu-active-color;
-                        background: transparent;
-
-                        &:before {
-                            background: $sidebar-light-menu-active-color;
-                        }
-                    }
-                }
-
-                &:hover {
-                    > .nav-link {
-                        background: $sidebar-light-submenu-hover-bg;
-                        color: $sidebar-light-submenu-hover-color;
-
-                        &:before {
-                            background: $sidebar-light-submenu-hover-color;
-                        }
-                    }
-                }
-            }
-        }
         .nav-item {
             &.purchase-button {
                 text-align: center;
@@ -265,5 +272,13 @@
         &.active {
             right: 0;
         }
+    }
+}
+
+.list-group-flush {
+    .list-group-item {
+        border: none;
+        padding: 0;
+        background: transparent;
     }
 }

@@ -11,7 +11,10 @@ import {
     BDropdownItem,
     BDropdownDivider,
     BNavItem,
-    VBToggle
+    VBToggle,
+    BListGroup,
+    BListGroupItem,
+    BButton
 } from "bootstrap-vue";
 import ImageFilterIcon from "icons/ImageFilter";
 import EmailOutlineIcon from "icons/EmailOutline";
@@ -25,6 +28,8 @@ import AccountMultipleIcon from "icons/AccountMultiple";
 import ViewDashboardIcon from "icons/ViewDashboard";
 import CubeIcon from "icons/Cube";
 import AccountLockIcon from "icons/AccountLock";
+
+import CrmSidebar from "./components/Sidebar";
 
 import "icons/styles.css";
 
@@ -40,9 +45,26 @@ const icons = {
     BellRingIcon,
     DomainIcon,
     AccountMultipleIcon,
-    ViewDashboardIcon
+    ViewDashboardIcon,
+    CrmSidebar
 };
 
+const bootstrap = {
+    BNav,
+    BListGroup,
+    BNavbar,
+    BNavbarBrand,
+    BContainer,
+    BNavbarToggle,
+    BCollapse,
+    BNavbarNav,
+    BNavItemDropdown,
+    BDropdownItem,
+    BDropdownDivider,
+    BNavItem,
+    BListGroupItem,
+    BButton
+};
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -55,18 +77,8 @@ const app = new Vue({
         companyLogoPreview: null
     },
     components: {
-        BNav,
-        BNavbar,
-        BNavbarBrand,
-        BContainer,
-        BNavbarToggle,
-        BCollapse,
-        BNavbarNav,
-        BNavItemDropdown,
-        BDropdownItem,
-        BDropdownDivider,
-        BNavItem,
-        ...icons
+        ...icons,
+        ...bootstrap
     },
     directives: {
         "b-toggle": VBToggle
