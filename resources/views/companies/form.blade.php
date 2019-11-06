@@ -7,22 +7,19 @@
         <b-container fluid>
             <b-row>
                 <b-col cols="12" md="8" xl="4">
-                    @if (session('invalid_file_error'))
-                    <div class="alert alert-danger" role="alert">
-                        {{session('invalid_file_error')}}
-                    </div>
-                    @endif
-                    <b-card title="Create new company">
+                    <b-card title="{{ $company ?? '' ?? '' ? 'Edit ' . $company->name : 'Create new company' }}">
+                        @if (session('invalid_file_error'))
+                        <div class="alert alert-danger" role="alert">
+                            {{session('invalid_file_error')}}
+                        </div>
+                        @endif
                         @if ($company ?? '')
-                        <form
-                            action="{{ route('companies.update', ['company' => $company->id]) }}"
-                            method="post"
-                            enctype="multipart/form-data"
-                        >
+                        <form action="{{ route('companies.update', ['company' => $company->id]) }}" method="post"
+                            enctype="multipart/form-data">
                             @method('PUT')
                         @else
                         <form action="{{ route('companies.store') }}" method="post" enctype="multipart/form-data">
-                        @endif
+                                @endif
                                 @csrf
 
                                 <div class="form-group">
