@@ -1,4 +1,5 @@
 const mix = require("laravel-mix");
+require("laravel-mix-purgecss");
 
 /*
  |--------------------------------------------------------------------------
@@ -13,4 +14,16 @@ const mix = require("laravel-mix");
 
 mix.js("resources/js/app.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
-    .browserSync(process.env.MIX_APP_DOMAIN);
+    .browserSync(process.env.MIX_APP_DOMAIN)
+    .purgeCss()
+    .webpackConfig({
+        resolve: {
+            alias: {
+                icons: path.resolve(
+                    __dirname,
+                    "node_modules/vue-material-design-icons"
+                )
+            },
+            extensions: [".vue"]
+        }
+    });

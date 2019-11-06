@@ -2,6 +2,7 @@ import Vue from "vue";
 import {
     BContainer,
     BNavbar,
+    BNav,
     BNavbarBrand,
     BNavbarToggle,
     BCollapse,
@@ -9,9 +10,65 @@ import {
     BNavItemDropdown,
     BDropdownItem,
     BDropdownDivider,
-    BNavItem
+    BNavItem,
+    VBToggle,
+    BListGroup,
+    BListGroupItem,
+    BButton,
+    BCard,
+    BRow,
+    BCol,
+    BAlert
 } from "bootstrap-vue";
+import ImageFilterIcon from "icons/ImageFilter";
+import EmailOutlineIcon from "icons/EmailOutline";
+import CalendarIcon from "icons/Calendar";
+import EmailVariantIcon from "icons/EmailVariant";
+import AlertCircleOutlineIcon from "icons/AlertCircleOutline";
+import CommentTextOutlineIcon from "icons/CommentTextOutline";
+import BellRingIcon from "icons/BellRing";
+import DomainIcon from "icons/Domain";
+import AccountMultipleIcon from "icons/AccountMultiple";
+import ViewDashboardIcon from "icons/ViewDashboard";
+import CubeIcon from "icons/Cube";
+import AccountLockIcon from "icons/AccountLock";
 
+import "icons/styles.css";
+
+const icons = {
+    CubeIcon,
+    AccountLockIcon,
+    ImageFilterIcon,
+    EmailOutlineIcon,
+    CalendarIcon,
+    EmailVariantIcon,
+    AlertCircleOutlineIcon,
+    CommentTextOutlineIcon,
+    BellRingIcon,
+    DomainIcon,
+    AccountMultipleIcon,
+    ViewDashboardIcon
+};
+const bootstrap = {
+    BAlert,
+    BCol,
+    BRow,
+    BCard,
+    BNav,
+    BListGroup,
+    BNavbar,
+    BNavbarBrand,
+    BContainer,
+    BNavbarToggle,
+    BCollapse,
+    BNavbarNav,
+    BNavItemDropdown,
+    BDropdownItem,
+    BDropdownDivider,
+    BNavItem,
+    BListGroupItem,
+    BButton
+};
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -24,16 +81,11 @@ const app = new Vue({
         companyLogoPreview: null
     },
     components: {
-        BNavbar,
-        BNavbarBrand,
-        BContainer,
-        BNavbarToggle,
-        BCollapse,
-        BNavbarNav,
-        BNavItemDropdown,
-        BDropdownItem,
-        BDropdownDivider,
-        BNavItem
+        ...icons,
+        ...bootstrap
+    },
+    directives: {
+        "b-toggle": VBToggle
     },
     methods: {
         companyLogoFileChanged(event) {

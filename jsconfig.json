@@ -1,0 +1,9 @@
+{
+    "include": ["./resources/js/**/*"],
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "icons": ["node_modules/vue-material-design-icons"]
+        }
+    }
+}

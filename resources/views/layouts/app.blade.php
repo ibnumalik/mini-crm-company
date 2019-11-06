@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,59 +15,27 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+
 <body>
     <div id="app">
 
-        <b-navbar toggleable="lg">
-            <b-container>
-                <b-navbar-brand href="{{url('/')}}">
-                    CRM
-                </b-navbar-brand>
+        <main class="main-app">
+            @include('app.header')
 
-                <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+            <b-container fluid class="page-body-wrapper">
+                @auth
+                @include('app.sidebar')
+                @endauth
 
-                <b-collapse id="nav-collapse" is-nav>
-                    <b-navbar-nav class="ml-auto">
-                        @guest
-                            <b-nav-item href="{{ route('login') }}">{{ __('Login') }}</b-nav-item>
-                        @else
-
-                        <b-nav-item-dropdown text="{{ Auth::user()->name }}">
-                            <b-dropdown-item href="{{ route('home') }}">
-                                Dashboard
-                            </b-dropdown-item>
-                            <b-dropdown-item href="{{ route('companies.index') }}">
-                                Companies
-                            </b-dropdown-item>
-                            <b-dropdown-item href="{{ route('employees.index') }}">
-                                Employees
-                            </b-dropdown-item>
-                            <b-dropdown-divider></b-dropdown-divider>
-                            <b-dropdown-item v-on:click="logout">Logout</b-dropdown-item>
-                            <form
-                                ref="logoutForm"
-                                class="d-none"
-                                action="{{route('logout')}}"
-                                method="post"
-                            >
-                                @csrf
-                            </form>
-                        </b-nav-item-dropdown>
-                        @endguest
-                    </b-navbar-nav>
-                </b-collapse>
-
+                @yield('content')
             </b-container>
-        </b-navbar>
-
-        <main class="py-4">
-            @yield('content')
         </main>
     </div>
 </body>
+
 </html>

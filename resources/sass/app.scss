@@ -1,17 +1,33 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600");
+
+// Vendor styling
+@import "~bootstrap";
+@import "~bootstrap-vue";
 
 // Variables
 @import "variables";
 
-@import '~bootstrap';
-@import '~bootstrap-vue';
+// Mixins
+// @import "mixins/animation";
+@import "mixins/cards";
+
+// Core
+@import "misc";
+@import "typography";
+@import "utilities";
+
+// Components
+@import "components/navbar";
+@import "components/sidebar";
+@import "components/cards";
 
 .invalid-feedback {
     display: block;
 }
 
-.company, .employee {
+.company,
+.employee {
     .btn {
         min-width: 100px;
     }
