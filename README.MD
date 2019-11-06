@@ -22,10 +22,10 @@ This is an admin panel to manage companies and their employees.
 - [x] Store company logo in `storage/app/public` directory.
 - [x] Paginate companies/employees list to 10 entries per page.
 - [x] Use Laravel’s validation function, using Request classes
+- [x] Use more complicated front-end theme like AdminLTE --> using Star Admin
 
 ## Advance Tasks
 - [ ] Use Datatables.net library to show table – with our without server-side rendering
-- [ ] Use more complicated front-end theme like AdminLTE
 - [ ] Email notification: send email whenever new company is entered (use Mailgun or Mailtrap)
 - [ ] Make the project multi-language (using resources/lang folder)
 - [ ] Basic testing with phpunit (I know some would argue it should be the basics, but I disagree)
