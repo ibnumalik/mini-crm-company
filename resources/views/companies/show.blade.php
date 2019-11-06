@@ -2,69 +2,72 @@
 
 @section('content')
 
-<div class="container company">
-    <div class="row">
-        <div class="col-sm">
+<div class="main-panel">
+    <div class="content-wrapper">
+        <b-container fluid>
+            <b-row>
+                <b-col cols="12" xl="4">
+                    <b-card title="{{ $company->name }}">
 
-            <div class="action d-flex">
-                <a href="{{ route('companies.edit', ['company' => $company->id]) }}"
-                    class="btn btn-info text-white mb-3 mr-3">
-                    Edit
-                </a>
+                        @if ($company->logo_path)
+                        <div class="d-flex align-items-center mb-4">
+                            <img width="25" class="mr-2" src="{{ url('storage/images/'.$company->logo_path) }}"
+                                alt="{{$company->name}}">
+                        </div>
+                        @endif
 
-                <form action="{{ route('companies.destroy', ['company' => $company->id]) }}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger text-white mb-3">
-                        Delete
-                    </button>
-                </form>
-            </div>
+                        <div class="company-item">
+                            <p class="mb-0 font-weight-bold">
+                                Website
+                            </p>
+                            <p>
+                                <a href="{{$company->website}}">
+                                    {{$company->website}}
+                                </a>
+                            </p>
+                        </div>
 
-            <div class="d-flex align-items-center mb-4">
-                @if ($company->logo_path)
-                <img
-                    width="25"
-                    class="mr-2"
-                    src="{{ url('storage/images/'.$company->logo_path) }}" alt="{{$company->name}}">
-                @endif
-                <h1 class="mb-0">{{ $company->name }}</h1>
-            </div>
+                        <div class="company-item">
+                            <p class="mb-0 font-weight-bold"> Email </p>
+                            <p>
+                                <a href="mailto:{{$company->email}}">
+                                    {{$company->email}}
+                                </a>
+                            </p>
+                        </div>
 
-            <div class="company-item">
-                <p class="mb-0 font-weight-bold">
-                    Website
-                </p>
-                <p>
-                    <a href="{{$company->website}}">
-                        {{$company->website}}
-                    </a>
-                </p>
-            </div>
+                        <div class="company-item">
+                            <p class="mb-0 font-weight-bold">Employees</p>
+                            <ol>
+                                @foreach ($company->employees as $employee)
+                                <li>
+                                    <a href="{{ route('employees.show', ['employee' => $employee->id]) }}">
+                                        {{$employee->first_name}}
+                                    </a>
+                                </li>
+                                @endforeach
+                            </ol>
+                        </div>
 
-            <div class="company-item">
-                <p class="mb-0 font-weight-bold"> Email </p>
-                <p>
-                    <a href="mailto:{{$company->email}}">
-                        {{$company->email}}
-                    </a>
-                </p>
-            </div>
+                        <div class="action d-flex">
+                            <a href="{{ route('companies.edit', ['company' => $company->id]) }}"
+                                class="btn btn-info text-white mr-3">
+                                Edit
+                            </a>
 
-            <div class="company-item">
-                <p class="mb-0 font-weight-bold">Employees</p>
-                <ol>
-                    @foreach ($company->employees as $employee)
-                    <li>
-                        <a href="{{ route('employees.show', ['employee' => $employee->id]) }}">
-                            {{$employee->first_name}}
-                        </a>
-                    </li>
-                    @endforeach
-                </ol>
-            </div>
+                            <form action="{{ route('companies.destroy', ['company' => $company->id]) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger text-white">
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
 
-        </div>
+                    </b-card>
+                </b-col>
+            </b-row>
+        </b-container>
     </div>
 </div>
 

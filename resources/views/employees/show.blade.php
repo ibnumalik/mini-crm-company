@@ -2,53 +2,59 @@
 
 @section('content')
 
-<div class="container employee">
-    <div class="row">
-        <div class="col-sm">
+<div class="main-panel">
+    <div class="content-wrapper">
+        <b-container fluid>
+            <b-row>
+                <b-col cols="12" lg="4">
+                    <b-card title="{{ $employee->first_name . ' ' . $employee->last_name }}">
 
-            <div class="action d-flex">
-                <a href="{{ route('employees.edit', ['employee' => $employee->id]) }}"
-                    class="btn btn-info text-white mb-3 mr-3">
-                    Edit
-                </a>
+                        <div class="employee-item">
+                            <p class="mb-0">
+                                Phone
+                            </p>
+                            <p> {{$employee->phone}} </p>
+                        </div>
 
-                <form action="{{ route('employees.destroy', ['employee' => $employee->id]) }}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger text-white mb-3">
-                        Delete
-                    </button>
-                </form>
-            </div>
+                        <div class="employee-item">
+                            <p class="mb-0">
+                                Email
+                            </p>
+                            <p>
+                                <a href="mailto:{{$employee->email}}">
+                                    {{$employee->email}}
+                                </a>
+                            </p>
+                        </div>
 
-            <h1>{{ $employee->first_name . ' ' . $employee->last_name }}</h1>
+                        <div class="employee-item">
+                            <p class="mb-0"> Employer </p>
+                            <p>
+                                <a href="{{ route('companies.show', ['company' => $employee->company->id]) }}">
+                                    {{$employee->company->name}} </p>
+                            </a>
+                        </div>
 
-            <div class="employee-item">
-                <p class="mb-0">
-                    Phone
-                </p>
-                <p> {{$employee->phone}} </p>
-            </div>
+                        <div class="action d-flex">
+                            <a href="{{ route('employees.edit', ['employee' => $employee->id]) }}"
+                                class="btn btn-info text-white mb-3 mr-3">
+                                Edit
+                            </a>
 
-            <div class="employee-item">
-                <p class="mb-0">
-                    Email
-                </p>
-                <p>
-                    <a href="mailto:{{$employee->email}}">
-                        {{$employee->email}}
-                    </a>
-                </p>
-            </div>
+                            <form action="{{ route('employees.destroy', ['employee' => $employee->id]) }}"
+                                method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger text-white mb-3">
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
 
-            <div class="employee-item">
-                <p class="mb-0"> Employer </p>
-                <p>
-                    <a href="{{ route('companies.show', ['company' => $employee->company->id]) }}">
-                        {{$employee->company->name}} </p>
-                </a>
-            </div>
-        </div>
+                    </b-card>
+                </b-col>
+            </b-row>
+        </b-container>
     </div>
 </div>
 
