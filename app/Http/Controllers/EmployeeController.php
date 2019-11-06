@@ -92,8 +92,10 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
+        $name = $employee->first_name . ' ' . $employee->last_name;
+
         $employee->delete();
 
-        return redirect()->route('employees.index');
+        return redirect()->route('employees.index')->with('message', "Successfully delete $name.");
     }
 }

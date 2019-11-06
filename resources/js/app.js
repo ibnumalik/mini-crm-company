@@ -17,7 +17,8 @@ import {
     BButton,
     BCard,
     BRow,
-    BCol
+    BCol,
+    BAlert
 } from "bootstrap-vue";
 import ImageFilterIcon from "icons/ImageFilter";
 import EmailOutlineIcon from "icons/EmailOutline";
@@ -48,8 +49,8 @@ const icons = {
     AccountMultipleIcon,
     ViewDashboardIcon
 };
-
 const bootstrap = {
+    BAlert,
     BCol,
     BRow,
     BCard,

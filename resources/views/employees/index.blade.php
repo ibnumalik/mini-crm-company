@@ -8,6 +8,13 @@
 
             <b-row>
                 <b-col cols="12" lg="4">
+
+                    @if (session('message'))
+                    <b-alert variant="success" show dismissible fade>
+                        {{session('message')}}
+                    </b-alert>
+                    @endif
+
                     <b-card title="Employee List">
                         <ol>
                             @foreach ($employees as $employee)
