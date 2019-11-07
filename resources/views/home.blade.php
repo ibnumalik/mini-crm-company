@@ -4,54 +4,48 @@
 <div class="main-panel">
     <div class="content-wrapper">
         <section class="dashboard">
-            <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-                    <div class="card card-statistics">
-                        <div class="card-body">
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <cube-icon class="text-danger icon-lg"></cube-icon>
-                                </div>
-                                <div class="float-right">
-                                    <p class="card-text text-right">Total Company</p>
-                                    <div class="fluid-container">
-                                        <h3 class="card-title font-weight-bold text-right mb-0">
-                                            {{$total_companies}}
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-muted mt-3">
-                                <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i>
-                                65% lower growth
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-                    <div class="card card-statistics">
-                        <div class="card-body">
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <account-lock-icon class="text-info icon-lg"></account-lock-icon>
-                                </div>
-                                <div class="float-right">
-                                    <p class="card-text text-right">Total Employees</p>
-                                    <div class="fluid-container">
-                                        <h3 class="card-title font-weight-bold text-right mb-0">
-                                            {{ $total_employees }}
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-muted mt-3">
-                                <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i>
-                                65% lower growth
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <b-row>
+                <b-col cols="6" md="3" class="grid-margin">
+                    <b-card>
+                        <b-card-group class="justify-content-between">
+                            <cube-icon class="text-danger icon-lg mb-auto"></cube-icon>
+
+                            <b-card-group class="d-flex flex-column">
+                                <b-card-text class="mb-0"> Total Company </b-card-text>
+                                <b-card-title title-tag="h3" class="font-weight-bold text-right mb-0">
+                                    {{ $total_companies }}
+                                </b-card-title>
+                            </b-card-group>
+                        </b-card-group>
+
+                        <p class="text-muted mb-0 mt-3">
+                            <alert-octagon-icon></alert-octagon-icon>
+                            65% lower growth
+                        </p>
+
+                    </b-card>
+                </b-col>
+                <b-col cols="6" md="3" class="grid-margin">
+                    <b-card>
+                        <b-card-group class="justify-content-between">
+                            <account-lock-icon class="text-info icon-lg"></account-lock-icon>
+
+                            <b-card-group class="d-flex flex-column">
+                                <b-card-text class="mb-0"> Total Employee </b-card-text>
+                                <b-card-title title-tag="h3" class="font-weight-bold text-right mb-0">
+                                    {{ $total_employees }}
+                                </b-card-title>
+                            </b-card-group>
+                        </b-card-group>
+
+                        <p class="text-muted mb-0 mt-3">
+                            <alert-octagon-icon></alert-octagon-icon>
+                            65% lower growth
+                        </p>
+
+                    </b-card>
+                </b-col>
+            </b-row>
         </section>
     </div>
 </div>
