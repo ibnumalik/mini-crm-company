@@ -1,24 +1,28 @@
 import Vue from "vue";
 import {
-    BContainer,
-    BNavbar,
-    BNav,
-    BNavbarBrand,
-    BNavbarToggle,
-    BCollapse,
-    BNavbarNav,
-    BNavItemDropdown,
-    BDropdownItem,
-    BDropdownDivider,
-    BNavItem,
-    VBToggle,
-    BListGroup,
-    BListGroupItem,
+    BAlert,
     BButton,
     BCard,
-    BRow,
+    BCardBody,
+    BCardText,
     BCol,
-    BAlert
+    BCollapse,
+    BContainer,
+    BDropdownDivider,
+    BDropdownItem,
+    BListGroup,
+    BListGroupItem,
+    BNav,
+    BNavbar,
+    BNavbarBrand,
+    BNavbarNav,
+    BNavbarToggle,
+    BNavItem,
+    BNavItemDropdown,
+    BRow,
+    VBToggle,
+    BCardTitle,
+    BCardGroup,
 } from "bootstrap-vue";
 import ImageFilterIcon from "icons/ImageFilter";
 import EmailOutlineIcon from "icons/EmailOutline";
@@ -32,10 +36,12 @@ import AccountMultipleIcon from "icons/AccountMultiple";
 import ViewDashboardIcon from "icons/ViewDashboard";
 import CubeIcon from "icons/Cube";
 import AccountLockIcon from "icons/AccountLock";
+import AlertOctagonIcon from "icons/AlertOctagon";
 
 import "icons/styles.css";
 
 const icons = {
+    AlertOctagonIcon,
     CubeIcon,
     AccountLockIcon,
     ImageFilterIcon,
@@ -49,25 +55,30 @@ const icons = {
     AccountMultipleIcon,
     ViewDashboardIcon
 };
+
 const bootstrap = {
+    BCardGroup,
+    BCardTitle,
     BAlert,
-    BCol,
-    BRow,
+    BButton,
     BCard,
-    BNav,
+    BCardBody,
+    BCardText,
+    BCol,
+    BCollapse,
+    BContainer,
+    BDropdownDivider,
+    BDropdownItem,
     BListGroup,
+    BListGroupItem,
+    BNav,
     BNavbar,
     BNavbarBrand,
-    BContainer,
-    BNavbarToggle,
-    BCollapse,
     BNavbarNav,
-    BNavItemDropdown,
-    BDropdownItem,
-    BDropdownDivider,
+    BNavbarToggle,
     BNavItem,
-    BListGroupItem,
-    BButton
+    BNavItemDropdown,
+    BRow
 };
 /**
  * Next, we will create a fresh Vue application instance and attach it to
