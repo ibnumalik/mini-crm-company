@@ -37,7 +37,7 @@
 
                         <div class="action d-flex">
                             <a href="{{ route('employees.edit', ['employee' => $employee->id]) }}"
-                                class="btn btn-info text-white mb-3 mr-3">
+                                class="btn btn-info text-white mr-3">
                                 Edit
                             </a>
 
@@ -45,7 +45,7 @@
                                 method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger text-white mb-3">
+                                <button type="submit" class="btn btn-danger text-white">
                                     Delete
                                 </button>
                             </form>

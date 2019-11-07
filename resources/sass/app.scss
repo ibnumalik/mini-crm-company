@@ -1,12 +1,16 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600");
 
-// Vendor styling
-@import "~bootstrap";
-@import "~bootstrap-vue";
+// Bootstrap functions and variables.
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
 
 // Variables
 @import "variables";
+
+// Vendor styling
+@import "~bootstrap";
+@import "~bootstrap-vue";
 
 // Mixins
 // @import "mixins/animation";
