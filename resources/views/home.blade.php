@@ -28,7 +28,7 @@
                 <b-col cols="6" md="3" class="grid-margin">
                     <b-card>
                         <b-card-group class="justify-content-between">
-                            <account-lock-icon class="text-info icon-lg"></account-lock-icon>
+                            <account-group-icon class="text-primary icon-lg"></account-group-icon>
 
                             <b-card-group class="d-flex flex-column">
                                 <b-card-text class="mb-0"> Total Employee </b-card-text>

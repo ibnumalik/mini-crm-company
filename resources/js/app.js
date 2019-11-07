@@ -22,7 +22,7 @@ import {
     BRow,
     VBToggle,
     BCardTitle,
-    BCardGroup,
+    BCardGroup
 } from "bootstrap-vue";
 import ImageFilterIcon from "icons/ImageFilter";
 import EmailOutlineIcon from "icons/EmailOutline";
@@ -37,11 +37,13 @@ import ViewDashboardIcon from "icons/ViewDashboard";
 import CubeIcon from "icons/Cube";
 import AccountLockIcon from "icons/AccountLock";
 import AlertOctagonIcon from "icons/AlertOctagon";
+import AccountGroupIcon from "icons/AccountGroup";
 
 import "icons/styles.css";
 
 const icons = {
     AlertOctagonIcon,
+    AccountGroupIcon,
     CubeIcon,
     AccountLockIcon,
     ImageFilterIcon,
