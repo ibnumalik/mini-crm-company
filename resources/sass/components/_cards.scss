@@ -35,6 +35,14 @@
     }
 }
 
+.card-link {
+    color: $body-color;
+
+    &:hover {
+        color: $body-color;
+    }
+}
+
 @each $color, $value in $theme-colors {
     .card-inverse-#{$color} {
         @include card-inverse-variant(
