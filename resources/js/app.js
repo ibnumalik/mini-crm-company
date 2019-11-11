@@ -22,7 +22,8 @@ import {
     BRow,
     VBToggle,
     BCardTitle,
-    BCardGroup
+    BCardGroup,
+    BTable
 } from "bootstrap-vue";
 import ImageFilterIcon from "icons/ImageFilter";
 import EmailOutlineIcon from "icons/EmailOutline";
@@ -38,6 +39,8 @@ import CubeIcon from "icons/Cube";
 import AccountLockIcon from "icons/AccountLock";
 import AlertOctagonIcon from "icons/AlertOctagon";
 import AccountGroupIcon from "icons/AccountGroup";
+
+import CompanyDataTable from "./components/CompanyDataTable";
 
 import "icons/styles.css";
 
@@ -59,6 +62,7 @@ const icons = {
 };
 
 const bootstrap = {
+    BTable,
     BCardGroup,
     BCardTitle,
     BAlert,
@@ -95,7 +99,8 @@ const app = new Vue({
     },
     components: {
         ...icons,
-        ...bootstrap
+        ...bootstrap,
+        CompanyDataTable
     },
     directives: {
         "b-toggle": VBToggle
