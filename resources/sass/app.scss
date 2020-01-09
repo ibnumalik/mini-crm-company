@@ -15,16 +15,21 @@
 // Mixins
 // @import "mixins/animation";
 @import "mixins/cards";
+@import "mixins/buttons";
 
 // Core
 @import "misc";
 @import "typography";
 @import "utilities";
 
-// Components
-@import "components/navbar";
+// Core
 @import "components/sidebar";
+@import "components/navbar";
+
+// Components
+@import "components/buttons";
 @import "components/cards";
+@import "components/forms";
 
 .invalid-feedback {
     display: block;
