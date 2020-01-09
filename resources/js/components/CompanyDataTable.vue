@@ -33,13 +33,23 @@
     <b-table
       :fields="fields"
       :items="data"
-      selectable
       :per-page="perPage"
       :filter="filter"
       :current-page="currentPage"
       @filtered="onFiltered"
-    ></b-table>
-    <b-pagination v-model="currentPage" :total-rows="totalRows" :per-page="perPage"></b-pagination>
+    >
+      <template v-slot:cell(actions)="data">
+        <b-button size="sm" variant="light" :href="`companies/${data.item.id}/edit`">Edit</b-button>
+        <form class="d-inline-block" :action="`companies/${data.item.id}`" method="post">
+          <input type="hidden" name="_token" :value="csrfToken" />
+          <input type="hidden" name="_method" value="DELETE" />
+
+          <b-button variant="danger" size="sm" type="submit">Delete</b-button>
+        </form>
+      </template>
+    </b-table>
+    <b-pagination v-model="currentPage" :total-rows="totalRows" :per-page="perPage" limit="10"></b-pagination>
+
   </div>
 </template>
 
@@ -51,10 +61,13 @@ import {
   BCol,
   BFormGroup,
   BFormSelect,
-  BFormInput
+  BFormInput,
+  BButton
 } from "bootstrap-vue";
+
 export default {
   components: {
+    BButton,
     BFormInput,
     BFormGroup,
     BFormSelect,
@@ -73,21 +86,21 @@ export default {
           key: "name",
           sortable: true
         },
-        {
-          key: "email"
-        },
-        {
-          key: "website"
-        }
+        "email",
+        "website",
+        "actions"
       ],
       perPage: 5,
       filter: null,
       currentPage: 1,
       totalRows: 1,
-      pageOptions: [5, 10, 25, 50, 100]
+      pageOptions: [5, 10, 25, 50, 100],
+      csrfToken: null
     };
   },
   mounted() {
+    this.csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
     this.totalRows = this.data.length;
   },
   methods: {
