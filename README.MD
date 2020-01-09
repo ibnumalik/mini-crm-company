@@ -4,6 +4,15 @@ https://laraveldaily.com/test-junior-laravel-developer-sample-project/
 
 This is an admin panel to manage companies and their employees.
 
+## Getting Started
+
+To get started with development of this project, you can follow this step:
+
+1. Clone this project.
+2. Run `composer install` and `npm install`
+3. Run `php artisan serve`
+
+## Tasks
 - [x] Scaffold the login using laravel auth maker.
 - [x] Seed user table with admin user.
 - [x] Company.
