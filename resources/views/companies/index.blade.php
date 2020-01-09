@@ -7,7 +7,7 @@
 
             <b-row>
                 <b-col>
-                    <b-card>
+                    <b-card title="List companies">
                         <company-data-table :data='@json($companies)'></company-data-table>
                     </b-card>
                 </b-col>
