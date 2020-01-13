@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use App\Http\Requests\StoreCompany;
+use App\Mail\CompanyCreated;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class CompanyController extends Controller
@@ -50,10 +52,12 @@ class CompanyController extends Controller
             Storage::disk('image')->put($logo_name, File::get($logo));
         }
 
-        Company::create(array_merge(
+        $company = Company::create(array_merge(
             $request->all(),
             ['logo_path' => $logo_name]
         ));
+
+        Mail::to('ibnumalik@tbd.my')->send(new CompanyCreated($company));
 
         return redirect()->route('companies.index');
     }
