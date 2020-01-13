@@ -32,9 +32,9 @@ To get started with development of this project, you can follow this step:
 - [x] Paginate companies/employees list to 10 entries per page.
 - [x] Use Laravel’s validation function, using Request classes
 - [x] Use more complicated front-end theme like AdminLTE --> using [Star Admin Template](https://github.com/BootstrapDash/StarAdmin-Free-Vue-Admin-Template)
+- [x] Use Datatables.net library to show table – with our without server-side rendering --> Use vue bootstrap data table.
+- [x] Email notification: send email whenever new company is entered (use Mailgun or Mailtrap) --> Use Mailgun
 
 ## Advance Tasks
-- [ ] Use Datatables.net library to show table – with our without server-side rendering
-- [ ] Email notification: send email whenever new company is entered (use Mailgun or Mailtrap)
 - [ ] Make the project multi-language (using resources/lang folder)
 - [ ] Basic testing with phpunit (I know some would argue it should be the basics, but I disagree)
