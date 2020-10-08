@@ -161,7 +161,7 @@
 /*social buttons*/
 @each $color, $value in $social-colors {
     .btn-#{$color} {
-        @include social-button(social-color($color));
+        @include social-button($value);
     }
 }
 /* inverse buttons */
