@@ -12,6 +12,15 @@ To get started with development of this project, you can follow this step:
 2. Run `composer install` and `npm install`
 3. Run `php artisan serve`
 
+### Easy start with Docker
+
+Prefer docker to boot up application? Then follow this easy step.
+
+1. Make sure you have run `composer install`.
+2. Start app by running `./vessel start`.
+
+That's it! You can open http://localhost to view the app.
+
 ## Tasks
 - [x] Scaffold the login using laravel auth maker.
 - [x] Seed user table with admin user.
