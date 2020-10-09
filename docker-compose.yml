@@ -12,9 +12,17 @@ services:
       XDEBUG_HOST: "${XDEBUG_HOST}"
       WWWUSER: "${WWWUSER}"
     volumes:
-     - .:/var/www/html
+      - .:/var/www/html
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.mini-crm.rule=Host(`mini-crm.localhost`)'
+      - 'traefik.http.routers.mini-crm.entrypoints=web'
+      - 'traefik.http.services.mini-crm.loadbalancer.server.port=80'
+      - 'traefik.docker.network=web'
     networks:
-     - vessel
+      - vessel
+      - web
+      - mariadb_database
   node:
     build:
       context: ./docker/node
@@ -52,6 +60,10 @@ services:
 networks:
   vessel:
     driver: "bridge"
+  web:
+    external: true
+  mariadb_database:
+    external: true
 volumes:
   vesselmysql:
     driver: "local"
