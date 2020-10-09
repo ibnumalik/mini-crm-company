@@ -42,7 +42,7 @@ class CompanyController extends Controller
     public function store(StoreCompany $request)
     {
         $logo = $request->file('logo');
-        $logo_name = $logo->getClientOriginalName() . '.' . $logo->getClientOriginalExtension();
+        $logo_name = $logo ? $logo->getClientOriginalName() . '.' . $logo->getClientOriginalExtension() : '';
 
         if ($request->hasFile('logo')) {
             if (!$logo->isValid()) {
