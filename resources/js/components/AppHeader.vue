@@ -91,7 +91,7 @@
           </form>
         </b-nav-item-dropdown>
         <b-nav-item href="#">
-          <img class="img-xs rounded-circle" src="" alt="profile image" />
+          <img class="avatar" src="" />
         </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
@@ -116,3 +116,21 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.avatar {
+     display: inline-block;
+     font-family: Arial, sans-serif;
+     font-weight: 300;
+     line-height: 2;
+     text-align: center;
+     background: #ccc;
+     border-radius: 999px;
+
+     min-width: 37px;
+     min-height: 37px;
+     position: relative;
+}
+
+
+</style>

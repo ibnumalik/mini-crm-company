@@ -1,49 +1,52 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600");
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600');
 
 // Bootstrap functions and variables.
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
 
 // Variables
-@import "variables";
+@import 'variables';
 
-@import "~compass-mixins/lib/compass";
-@import "~compass-mixins/lib/animate";
-
+@import '~compass-mixins/lib/compass';
+@import '~compass-mixins/lib/animate';
 
 // Vendor styling
-@import "~bootstrap";
-@import "~bootstrap-vue";
+@import '~bootstrap';
+@import '~bootstrap-vue';
 
 // Mixins
 // @import "mixins/animation";
-@import "mixins/cards";
-@import "mixins/buttons";
+@import 'mixins/cards';
+@import 'mixins/buttons';
 
 // Core
-@import "misc";
-@import "typography";
-@import "utilities";
+@import 'misc';
+@import 'typography';
+@import 'utilities';
 
 // Core
-@import "components/sidebar";
-@import "components/navbar";
+@import 'components/sidebar';
+@import 'components/navbar';
 
 // Components
-@import "components/buttons";
-@import "components/cards";
-@import "components/forms";
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/forms';
 
-@import "landing-screens/auth";
+@import 'landing-screens/auth';
+
+html {
+  font-size: 16px;
+}
 
 .invalid-feedback {
-    display: block;
+  display: block;
 }
 
 .company,
 .employee {
-    .btn {
-        min-width: 100px;
-    }
+  .btn {
+    min-width: 100px;
+  }
 }
