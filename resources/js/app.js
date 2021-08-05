@@ -1,4 +1,6 @@
 import Vue from "vue";
+import { createInertiaApp } from '@inertiajs/inertia-vue'
+import { InertiaProgress } from '@inertiajs/progress'
 import {
     BAlert,
     BButton,
@@ -86,41 +88,44 @@ const bootstrap = {
     BNavItemDropdown,
     BRow
 };
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 
-const app = new Vue({
-    el: "#app",
-    data: {
-        companyLogoPreview: null
-    },
-    components: {
-        ...icons,
-        ...bootstrap,
-        CompanyDataTable
-    },
-    directives: {
-        "b-toggle": VBToggle
-    },
-    methods: {
-        companyLogoFileChanged(event) {
-            const logo = event.target.files;
 
-            if (logo && logo[0]) {
-                let reader = new FileReader();
+InertiaProgress.init()
 
-                reader.onload = e =>
-                    (this.companyLogoPreview = e.target.result);
+createInertiaApp({
+    resolve: name => require(`./Pages/${name}`),
+    setup({ el, App, props }) {
+        new Vue({
+            render: h => h(App, props),
+            data: {
+                companyLogoPreview: null
+            },
+            components: {
+                ...icons,
+                ...bootstrap,
+                CompanyDataTable
+            },
+            directives: {
+                "b-toggle": VBToggle
+            },
+            methods: {
+                companyLogoFileChanged(event) {
+                    const logo = event.target.files;
 
-                reader.readAsDataURL(logo[0]);
+                    if (logo && logo[0]) {
+                        let reader = new FileReader();
+
+                        reader.onload = e =>
+                            (this.companyLogoPreview = e.target.result);
+
+                        reader.readAsDataURL(logo[0]);
+                    }
+                },
+                logout(event) {
+                    event.preventDefault();
+                    this.$refs.logoutForm.submit();
+                }
             }
-        },
-        logout(event) {
-            event.preventDefault();
-            this.$refs.logoutForm.submit();
-        }
+        }).$mount(el)
     }
-});
+})

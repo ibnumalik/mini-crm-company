@@ -8,6 +8,10 @@
 // Variables
 @import "variables";
 
+@import "~compass-mixins/lib/compass";
+@import "~compass-mixins/lib/animate";
+
+
 // Vendor styling
 @import "~bootstrap";
 @import "~bootstrap-vue";
@@ -30,6 +34,8 @@
 @import "components/buttons";
 @import "components/cards";
 @import "components/forms";
+
+@import "landing-screens/auth";
 
 .invalid-feedback {
     display: block;

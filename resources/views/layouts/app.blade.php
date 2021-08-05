@@ -22,7 +22,8 @@
 </head>
 
 <body>
-    <div id="app">
+    @inertia
+    {{-- <div id="app">
 
         <main class="main-app">
             @include('app.header')
@@ -35,7 +36,7 @@
                 @yield('content')
             </b-container>
         </main>
-    </div>
+    </div> --}}
 </body>
 
 </html>
