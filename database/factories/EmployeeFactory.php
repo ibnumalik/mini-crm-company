@@ -1,16 +1,22 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Employee;
-use Faker\Generator as Faker;
 
-$factory->define(Employee::class, function (Faker $faker) {
-    return [
-        'first_name' => $faker->firstName,
-        'last_name' => $faker->lastName,
-        'email' => $faker->companyEmail,
-        'phone' => $faker->phoneNumber,
-        'company_id' => \App\Company::all()->random()->id
-    ];
-});
+class EmployeeFactory extends Factory
+{
+    protected $model = Employee::class;
+
+    public function definition()
+    {
+        return [
+            'first_name' => $this->faker->firstName,
+            'last_name' => $this->faker->lastName,
+            'email' => $this->faker->companyEmail,
+            'phone' => $this->faker->phoneNumber,
+            'company_id' => \App\Company::all()->random()->id
+        ];
+    }
+}

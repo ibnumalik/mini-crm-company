@@ -29,7 +29,7 @@
 
             <b-container fluid class="page-body-wrapper">
                 @auth
-                @include('app.sidebar')
+                    <x-sidebar></x-sidebar>
                 @endauth
 
                 @yield('content')
