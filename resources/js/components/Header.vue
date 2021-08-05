@@ -1,0 +1,58 @@
+<template>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header-inner">
+        <div class="brand header-brand">
+          <h1 class="m-0">
+            <a href="#">
+              <img
+                class="header-logo-image asset-light"
+                src="images/logo-light.svg"
+                alt="Logo"
+              />
+              <img
+                class="header-logo-image asset-dark"
+                src="images/logo-dark.svg"
+                alt="Logo"
+              />
+            </a>
+          </h1>
+        </div>
+        <ul class="nav-header-right">
+          <li>
+            <Link class="nav-link" href="/login">Login</Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+</template>
+
+<script>
+import { Link } from '@inertiajs/inertia-vue';
+
+export default {
+  components: {
+    Link,
+  },
+};
+</script>
+
+<style scoped>
+.nav-header-right {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.site-header {
+  padding: 0;
+}
+
+.site-header-inner {
+  /* padding-top: 24px; */
+}
+
+.nav-link {
+  text-decoration: none;
+}
+</style>

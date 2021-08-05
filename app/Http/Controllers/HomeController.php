@@ -27,6 +27,6 @@ class HomeController extends Controller
         $total_companies = Company::all()->count();
         $total_employees = Employee::all()->count();
 
-        return view('home', compact('total_companies', 'total_employees'));
+        return inertia('home', compact('total_companies', 'total_employees'));
     }
 }
