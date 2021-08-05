@@ -60,8 +60,11 @@
 </template>
 
 <script>
+import Layout from '../layouts/dashboard.vue';
+
 export default {
   name: 'Home',
   props: ['total_companies', 'total_employees'],
+  layout: Layout,
 };
 </script>

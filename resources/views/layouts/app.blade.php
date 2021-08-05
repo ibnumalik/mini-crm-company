@@ -26,20 +26,6 @@
 <body>
     @routes
     @inertia
-    {{-- <div id="app">
-
-        <main class="main-app">
-            @include('app.header')
-
-            <b-container fluid class="page-body-wrapper">
-                @auth
-                    <x-sidebar></x-sidebar>
-                @endauth
-
-                @yield('content')
-            </b-container>
-        </main>
-    </div> --}}
 </body>
 
 </html>

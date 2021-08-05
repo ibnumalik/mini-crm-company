@@ -97,6 +97,9 @@ function registerVueComponent(components) {
 
 registerVueComponent(bootstrap);
 registerVueComponent(icons);
+Vue.component('CompanyDataTable', CompanyDataTable);
+Vue.directive('BToggle', VBToggle)
+
 InertiaProgress.init()
 Vue.prototype.$route = route
 
@@ -107,12 +110,6 @@ createInertiaApp({
             render: h => h(App, props),
             data: {
                 companyLogoPreview: null
-            },
-            components: {
-                CompanyDataTable
-            },
-            directives: {
-                "b-toggle": VBToggle
             },
             methods: {
                 companyLogoFileChanged(event) {
@@ -127,10 +124,6 @@ createInertiaApp({
                         reader.readAsDataURL(logo[0]);
                     }
                 },
-                logout(event) {
-                    event.preventDefault();
-                    this.$refs.logoutForm.submit();
-                }
             }
         }).$mount(el)
     }
