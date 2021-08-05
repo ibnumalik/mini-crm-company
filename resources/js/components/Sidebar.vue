@@ -8,7 +8,7 @@
             <span class="online-status online"></span>
           </div>
           <div class="profile-name">
-            <!-- <p class="name">{{ Auth::user()->name }}</p> -->
+            <p class="name">{{ user.name }}</p>
             <!-- <p class="designation">Manager</p>  -->
             <!-- <div class="badge badge-teal mx-auto mt-3">Online</div> -->
           </div>
@@ -71,3 +71,13 @@
     </ul>
   </nav>
 </template>
+
+<script>
+export default {
+  computed: {
+    user() {
+      return this.$page.props.auth.user;
+    },
+  },
+};
+</script>
