@@ -24,6 +24,7 @@
 </head>
 
 <body>
+    @routes
     @inertia
     {{-- <div id="app">
 

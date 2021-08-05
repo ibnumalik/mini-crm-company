@@ -91,6 +91,7 @@ const bootstrap = {
 
 
 InertiaProgress.init()
+Vue.prototype.$route = route
 
 createInertiaApp({
     resolve: name => require(`./Pages/${name}`),
