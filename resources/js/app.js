@@ -89,7 +89,14 @@ const bootstrap = {
     BRow
 };
 
+function registerVueComponent(components) {
+    Object.entries(components).forEach(([key, value]) => {
+        Vue.component(key, value);
+    });
+}
 
+registerVueComponent(bootstrap);
+registerVueComponent(icons);
 InertiaProgress.init()
 Vue.prototype.$route = route
 
@@ -102,8 +109,6 @@ createInertiaApp({
                 companyLogoPreview: null
             },
             components: {
-                ...icons,
-                ...bootstrap,
                 CompanyDataTable
             },
             directives: {
