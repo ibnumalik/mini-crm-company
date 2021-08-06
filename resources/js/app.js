@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { createInertiaApp } from '@inertiajs/inertia-vue'
+import { createInertiaApp, Link } from '@inertiajs/inertia-vue'
 import { InertiaProgress } from '@inertiajs/progress'
 import {
     BAlert,
@@ -63,7 +63,7 @@ const icons = {
     ViewDashboardIcon
 };
 
-const bootstrap = {
+const components = {
     BTable,
     BCardGroup,
     BCardTitle,
@@ -86,7 +86,9 @@ const bootstrap = {
     BNavbarToggle,
     BNavItem,
     BNavItemDropdown,
-    BRow
+    BRow,
+    Link,
+    CompanyDataTable
 };
 
 function registerVueComponent(components) {
@@ -95,9 +97,8 @@ function registerVueComponent(components) {
     });
 }
 
-registerVueComponent(bootstrap);
+registerVueComponent(components);
 registerVueComponent(icons);
-Vue.component('CompanyDataTable', CompanyDataTable);
 Vue.directive('BToggle', VBToggle)
 
 InertiaProgress.init()

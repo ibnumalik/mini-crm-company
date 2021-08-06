@@ -99,11 +99,8 @@
 </template>
 
 <script>
-import { Link } from '@inertiajs/inertia-vue';
-
 export default {
   name: 'AppHeader',
-  components: { Link },
   data() {
     return {
       csrf: document

@@ -61,10 +61,8 @@
 
 <script>
 import Layout from '../layouts/dashboard.vue';
-import { Link } from '@inertiajs/inertia-vue';
 
 export default {
-  components: { Link },
   name: 'Home',
   props: ['total_companies', 'total_employees'],
   layout: Layout,

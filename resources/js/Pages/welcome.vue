@@ -218,13 +218,11 @@
 </template>
 
 <script>
-import { Link } from '@inertiajs/inertia-vue';
 import Footer from '../components/Footer.vue';
 import Header from '../components/Header.vue';
 
 export default {
   components: {
-    Link,
     Footer,
     Header,
   },

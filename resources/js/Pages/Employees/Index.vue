@@ -17,9 +17,9 @@
             <b-card title="Employee List">
               <ol>
                 <li v-for="employee in employees.data" :key="employee.id">
-                  <a :href="$route('employees.show', [employee.id])">
+                  <Link :href="$route('employees.show', [employee.id])">
                     {{ employee.first_name + ' ' + employee.last_name }}
-                  </a>
+                  </Link>
                 </li>
               </ol>
               <b-pagination-nav
