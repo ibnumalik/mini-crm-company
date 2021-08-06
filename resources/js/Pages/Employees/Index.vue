@@ -42,9 +42,6 @@ export default {
   layout: Layout,
   components: { BPaginationNav },
   props: ['employees'],
-  mounted() {
-    console.log(this.employees);
-  },
   methods: {
     linkGen(pageNum) {
       return pageNum === 1 ? '?' : `?page=${pageNum}`;

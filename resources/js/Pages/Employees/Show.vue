@@ -40,10 +40,7 @@
                   Edit
                 </Link>
 
-                <form
-                  @submit.prevent="deleteEmployee"
-                  :action="$route('employees.destroy', employee.id)"
-                >
+                <form @submit.prevent="deleteEmployee">
                   <button type="submit" class="btn btn-danger text-white">
                     Delete
                   </button>

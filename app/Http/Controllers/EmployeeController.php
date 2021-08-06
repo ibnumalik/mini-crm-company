@@ -30,7 +30,7 @@ class EmployeeController extends Controller
     {
         $companies = Company::all();
 
-        return view('employees.form', compact('companies'));
+        return inertia('Employees/Form', compact('companies'));
     }
 
     /**
@@ -68,8 +68,9 @@ class EmployeeController extends Controller
     public function edit(Employee $employee)
     {
         $companies = Company::all();
+        $employee = $employee->load('company');
 
-        return view('employees.form', compact('employee', 'companies'));
+        return inertia('Employees/Form', compact('employee', 'companies'));
     }
 
     /**
