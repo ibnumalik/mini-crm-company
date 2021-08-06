@@ -54,7 +54,9 @@ class EmployeeController extends Controller
      */
     public function show(Employee $employee)
     {
-        return view('employees.show', compact('employee'));
+        $employee = $employee->load('company');
+
+        return inertia('Employees/Show', compact('employee'));
     }
 
     /**
