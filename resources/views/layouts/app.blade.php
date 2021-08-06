@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/switch.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/css/switch.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
