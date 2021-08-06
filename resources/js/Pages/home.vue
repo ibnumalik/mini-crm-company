@@ -28,7 +28,7 @@
             </a>
           </b-col>
           <b-col cols="6" md="3" class="grid-margin">
-            <a :href="$route('employees.index')" class="card-link">
+            <Link :href="$route('employees.index')" class="card-link">
               <b-card>
                 <b-card-group class="justify-content-between">
                   <account-group-icon
@@ -51,7 +51,7 @@
                   65% lower growth
                 </p>
               </b-card>
-            </a>
+            </Link>
           </b-col>
         </b-row>
       </section>
@@ -61,8 +61,10 @@
 
 <script>
 import Layout from '../layouts/dashboard.vue';
+import { Link } from '@inertiajs/inertia-vue';
 
 export default {
+  components: { Link },
   name: 'Home',
   props: ['total_companies', 'total_employees'],
   layout: Layout,

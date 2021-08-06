@@ -4,7 +4,7 @@
     <div
       class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center"
     >
-      <b-navbar-brand :href="$route('home')"> crm </b-navbar-brand>
+        <Link class="navbar-brand" :href="$route('home')">crm</Link>
     </div>
     <b-collapse is-nav id="nav_collapse">
       <!-- Right aligned nav items -->
@@ -99,8 +99,11 @@
 </template>
 
 <script>
+import { Link } from '@inertiajs/inertia-vue';
+
 export default {
   name: 'AppHeader',
+  components: { Link },
   data() {
     return {
       csrf: document
@@ -119,18 +122,16 @@ export default {
 
 <style scoped>
 .avatar {
-     display: inline-block;
-     font-family: Arial, sans-serif;
-     font-weight: 300;
-     line-height: 2;
-     text-align: center;
-     background: #ccc;
-     border-radius: 999px;
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+  line-height: 2;
+  text-align: center;
+  background: #ccc;
+  border-radius: 999px;
 
-     min-width: 37px;
-     min-height: 37px;
-     position: relative;
+  min-width: 37px;
+  min-height: 37px;
+  position: relative;
 }
-
-
 </style>
