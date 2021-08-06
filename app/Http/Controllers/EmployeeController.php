@@ -18,7 +18,7 @@ class EmployeeController extends Controller
     {
         $employees = Employee::paginate(10);
 
-        return view('employees.index', compact('employees'));
+        return inertia('Employees/Index', compact('employees'));
     }
 
     /**
