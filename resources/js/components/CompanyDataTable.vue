@@ -14,7 +14,12 @@
           label-for="perPageSelect"
           class="mb-0"
         >
-          <b-form-select v-model="perPage" id="perPageSelect" size="sm" :options="pageOptions"></b-form-select>
+          <b-form-select
+            v-model="perPage"
+            id="perPageSelect"
+            size="sm"
+            :options="pageOptions"
+          ></b-form-select>
         </b-form-group>
       </b-col>
       <!-- Search table -->
@@ -26,7 +31,11 @@
           label-cols-xl="3"
           label-for="search"
         >
-          <b-form-input v-model="filter" type="search" id="search"></b-form-input>
+          <b-form-input
+            v-model="filter"
+            type="search"
+            id="search"
+          ></b-form-input>
         </b-form-group>
       </b-col>
     </b-row>
@@ -39,17 +48,27 @@
       @filtered="onFiltered"
     >
       <template v-slot:cell(actions)="data">
-        <b-button size="sm" variant="light" :href="`companies/${data.item.id}/edit`">Edit</b-button>
-        <form class="d-inline-block" :action="`companies/${data.item.id}`" method="post">
-          <input type="hidden" name="_token" :value="csrfToken" />
-          <input type="hidden" name="_method" value="DELETE" />
+        <Link
+          class="btn btn-light btn-sm"
+          :href="`companies/${data.item.id}/edit`"
+        >
+          Edit
+        </Link>
 
+        <form
+          class="d-inline-block"
+          @submit.prevent="deleteCompany(data.item.id)"
+        >
           <b-button variant="danger" size="sm" type="submit">Delete</b-button>
         </form>
       </template>
     </b-table>
-    <b-pagination v-model="currentPage" :total-rows="totalRows" :per-page="perPage" limit="10"></b-pagination>
-
+    <b-pagination
+      v-model="currentPage"
+      :total-rows="totalRows"
+      :per-page="perPage"
+      limit="10"
+    ></b-pagination>
   </div>
 </template>
 
@@ -62,8 +81,8 @@ import {
   BFormGroup,
   BFormSelect,
   BFormInput,
-  BButton
-} from "bootstrap-vue";
+  BButton,
+} from 'bootstrap-vue';
 
 export default {
   components: {
@@ -74,28 +93,28 @@ export default {
     BCol,
     BRow,
     BTable,
-    BPagination
+    BPagination,
   },
   props: {
-    data: Array
+    data: Array,
   },
   data() {
     return {
       fields: [
         {
-          key: "name",
-          sortable: true
+          key: 'name',
+          sortable: true,
         },
-        "email",
-        "website",
-        "actions"
+        'email',
+        'website',
+        'actions',
       ],
       perPage: 5,
       filter: null,
       currentPage: 1,
       totalRows: 1,
       pageOptions: [5, 10, 25, 50, 100],
-      csrfToken: null
+      csrfToken: null,
     };
   },
   mounted() {
@@ -107,8 +126,11 @@ export default {
     onFiltered(filteredItems) {
       this.totalRows = filteredItems.length;
       this.currentPage = 1;
-    }
-  }
+    },
+    deleteCompany(id) {
+      this.$inertia.delete(`/companies/${id}`);
+    },
+  },
 };
 </script>
 
