@@ -70,7 +70,9 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        return view('companies.show', ['company' => $company]);
+        $company = $company->load('employees');
+
+        return inertia('Companies/Show', ['company' => $company]);
     }
 
     /**
@@ -81,7 +83,7 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        return view('companies.form', ['company' => $company]);
+        return inertia('Companies/Form', ['company' => $company]);
     }
 
     /**
