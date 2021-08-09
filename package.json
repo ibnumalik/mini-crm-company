@@ -26,7 +26,7 @@
         "@inertiajs/inertia-vue": "^0.7.2",
         "@inertiajs/progress": "^0.2.6",
         "bootstrap": "^4.4.1",
-        "bootstrap-vue": "^2.0.4",
+        "bootstrap-vue": "^2.15.0",
         "compass-mixins": "^0.12.10",
         "vue-material-design-icons": "^4.1.0"
     }

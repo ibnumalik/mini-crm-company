@@ -22,6 +22,7 @@ Prefer docker to boot up application? Then follow this easy step.
 That's it! You can open http://localhost to view the app.
 
 ## Tasks
+
 - [x] Scaffold the login using laravel auth maker.
 - [x] Seed user table with admin user.
 - [x] Company.
@@ -45,5 +46,6 @@ That's it! You can open http://localhost to view the app.
 - [x] Email notification: send email whenever new company is entered (use Mailgun or Mailtrap) --> Use Mailgun
 
 ## Advance Tasks
+
 - [ ] Make the project multi-language (using resources/lang folder)
 - [ ] Basic testing with phpunit (I know some would argue it should be the basics, but I disagree)
