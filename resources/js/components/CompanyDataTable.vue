@@ -47,6 +47,9 @@
       :current-page="currentPage"
       @filtered="onFiltered"
     >
+      <template #cell(name)="data">
+        <Link :href="$route('companies.show', data.item.id)">{{ data.value }}</Link>
+      </template>
       <template v-slot:cell(actions)="data">
         <Link
           class="btn btn-light btn-sm"
@@ -109,7 +112,7 @@ export default {
         'website',
         'actions',
       ],
-      perPage: 5,
+      perPage: 15,
       filter: null,
       currentPage: 1,
       totalRows: 1,
