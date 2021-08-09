@@ -17,7 +17,11 @@
 
       <b-list-group flush>
         <!-- Dashboard Item -->
-        <Link class="list-group-item list-group-item-action" :href="$route('home')" :class="{'active': $page.url === 'employees'}">
+        <Link
+          class="list-group-item list-group-item-action"
+          :href="$route('home')"
+          :class="{ active: $page.url === 'employees' }"
+        >
           <div class="sidebar-item">
             <view-dashboard-icon class="menu-icon"></view-dashboard-icon>
             <span class="menu-title">Dashboard</span>
@@ -32,12 +36,20 @@
           </div>
           <b-collapse id="company">
             <b-list-group class="sub-menu">
-              <Link class="list-group-item list-group-item-action" :href="$route('companies.index')" :class="{'active': $page.url === 'companies'}">
+              <Link
+                class="list-group-item list-group-item-action"
+                :href="$route('companies.index')"
+                :class="{ active: $page.url === 'companies' }"
+              >
                 List Companies
               </Link>
-              <b-list-group-item :href="$route('companies.create')">
+              <Link
+                class="list-group-item list-group-item-action"
+                :href="$route('companies.create')"
+                :class="{ active: $page.url === 'companies/create' }"
+              >
                 Add Company
-              </b-list-group-item>
+              </Link>
             </b-list-group>
           </b-collapse>
         </b-list-group-item>
@@ -51,8 +63,19 @@
 
           <b-collapse id="employees">
             <b-list-group class="sub-menu">
-              <Link class="list-group-item list-group-item-action" :href="$route('employees.index')" :class="{'active': $page.url === 'employees'}"> List Employees </Link>
-              <Link class="list-group-item list-group-item-action" :href="$route('employees.create')"> Add Employee </Link>
+              <Link
+                class="list-group-item list-group-item-action"
+                :href="$route('employees.index')"
+                :class="{ active: $page.url === 'employees' }"
+              >
+                List Employees
+              </Link>
+              <Link
+                class="list-group-item list-group-item-action"
+                :href="$route('employees.create')"
+              >
+                Add Employee
+              </Link>
             </b-list-group>
           </b-collapse>
         </b-list-group-item>
@@ -69,7 +92,10 @@
 </template>
 
 <script>
+import { VBToggle } from 'bootstrap-vue';
+
 export default {
+  directives: { BToggle: VBToggle },
   computed: {
     user() {
       return this.$page.props.auth.user;

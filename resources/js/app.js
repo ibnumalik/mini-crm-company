@@ -22,7 +22,6 @@ import {
   BNavItem,
   BNavItemDropdown,
   BRow,
-  VBToggle,
   BCardTitle,
   BCardGroup,
   BTable,
@@ -42,7 +41,6 @@ import AccountLockIcon from 'icons/AccountLock';
 import AlertOctagonIcon from 'icons/AlertOctagon';
 import AccountGroupIcon from 'icons/AccountGroup';
 
-import CompanyDataTable from './components/CompanyDataTable';
 import RouterLink from './components/RouterLink';
 
 import 'icons/styles.css';
@@ -89,7 +87,6 @@ const components = {
   BNavItemDropdown,
   BRow,
   Link,
-  CompanyDataTable,
 };
 
 function registerVueComponent(components) {
@@ -102,7 +99,6 @@ registerVueComponent(components);
 registerVueComponent(icons);
 // https://bootstrap-vue.org/docs/reference/router-links#router-component-name
 Vue.component('RouterLink', RouterLink);
-Vue.directive('BToggle', VBToggle);
 
 InertiaProgress.init();
 Vue.prototype.$route = route;
