@@ -67,6 +67,7 @@
                     name="logo"
                     id="logo"
                     @change="companyLogoFileChanged"
+                    @input="form.logo = $event.target.files[0]"
                   />
                   <img
                     class="mt-2 w-25"
@@ -97,10 +98,15 @@ export default {
         name: null,
         email: null,
         website: null,
-        logo: null
+        logo: null,
       }),
       companyLogoPreview: null,
     };
+  },
+  mounted() {
+    if (this.company) {
+      this.form = this.$inertia.form({ ...this.company });
+    }
   },
   computed: {
     isEdit() {
