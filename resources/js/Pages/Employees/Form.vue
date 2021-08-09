@@ -135,10 +135,7 @@ export default {
   },
   methods: {
     submit() {
-      //   console.log(this.form);
-
       const form = this.form.transform(data => {
-        console.log(data);
         return {
           first_name: data.first_name,
           last_name: data.last_name,

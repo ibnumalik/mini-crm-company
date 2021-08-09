@@ -10,9 +10,8 @@
                 v-if="company.logo_path"
               >
                 <img
-                  width="25"
                   class="mr-2"
-                  :src="url(`storage/images/${company.logo_path}`)"
+                  :src="`/storage/images/${company.logo_path}`"
                   :alt="company.name"
                 />
               </div>
@@ -74,9 +73,6 @@ import Layout from '../../layouts/dashboard';
 export default {
   props: ['company'],
   layout: Layout,
-  mounted() {
-      console.log(this.company);
-  },
   methods: {
     deleteCompany() {
       this.$inertia.delete(`/companies/${this.company.id}`);
