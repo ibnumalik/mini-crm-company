@@ -30,7 +30,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('companies.form');
+        return inertia('Companies/Form');
     }
 
     /**
