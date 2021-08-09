@@ -4,7 +4,7 @@
       <section class="dashboard">
         <b-row>
           <b-col cols="6" md="3" class="grid-margin">
-            <a :href="$route('companies.index')" class="card-link">
+            <Link :href="$route('companies.index')" class="card-link">
               <b-card>
                 <b-card-group class="justify-content-between">
                   <cube-icon class="text-danger icon-lg mb-auto"></cube-icon>
@@ -25,7 +25,7 @@
                   65% lower growth
                 </p>
               </b-card>
-            </a>
+            </Link>
           </b-col>
           <b-col cols="6" md="3" class="grid-margin">
             <Link :href="$route('employees.index')" class="card-link">
