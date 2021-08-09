@@ -32,9 +32,9 @@
           </div>
           <b-collapse id="company">
             <b-list-group class="sub-menu">
-              <b-list-group-item :href="$route('companies.index')">
+              <Link class="list-group-item list-group-item-action" :href="$route('companies.index')" :class="{'active': $page.url === 'companies'}">
                 List Companies
-              </b-list-group-item>
+              </Link>
               <b-list-group-item :href="$route('companies.create')">
                 Add Company
               </b-list-group-item>

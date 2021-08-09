@@ -20,7 +20,7 @@ class CompanyController extends Controller
     {
         $companies = Company::all();
 
-        return view('companies.index', compact('companies'));
+        return inertia('Companies/Index', compact('companies'));
     }
 
     /**
