@@ -17,12 +17,12 @@
 
       <b-list-group flush>
         <!-- Dashboard Item -->
-        <b-list-group-item :href="$route('home')">
+        <Link class="list-group-item list-group-item-action" :href="$route('home')" :class="{'active': $page.url === 'employees'}">
           <div class="sidebar-item">
             <view-dashboard-icon class="menu-icon"></view-dashboard-icon>
             <span class="menu-title">Dashboard</span>
           </div>
-        </b-list-group-item>
+        </Link>
 
         <!-- Companies -->
         <b-list-group-item>
@@ -51,12 +51,8 @@
 
           <b-collapse id="employees">
             <b-list-group class="sub-menu">
-              <b-list-group-item :href="$route('employees.index')">
-                List Employees
-              </b-list-group-item>
-              <b-list-group-item :href="$route('employees.create')">
-                Add Employee
-              </b-list-group-item>
+              <Link class="list-group-item list-group-item-action" :href="$route('employees.index')" :class="{'active': $page.url === 'employees'}"> List Employees </Link>
+              <Link class="list-group-item list-group-item-action" :href="$route('employees.create')"> Add Employee </Link>
             </b-list-group>
           </b-collapse>
         </b-list-group-item>
