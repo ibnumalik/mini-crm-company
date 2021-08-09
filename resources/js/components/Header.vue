@@ -19,9 +19,15 @@
           </h1>
         </div>
         <ul class="nav-header-right">
-          <li>
-            <Link class="nav-link" href="/login">Login</Link>
-          </li>
+          <template v-if="guest">
+            <li>
+              <Link class="nav-link" href="/login">Login</Link>
+            </li>
+          </template>
+
+          <template v-else>
+              <Link class="nav-link" href="/home">Dashboard</Link>
+          </template>
         </ul>
       </div>
     </div>
@@ -30,6 +36,11 @@
 
 <script>
 export default {
+  computed: {
+    guest() {
+      return !this.$page.props.auth.user;
+    },
+  },
 };
 </script>
 
