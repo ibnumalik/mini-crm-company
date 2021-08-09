@@ -95,7 +95,8 @@ class CompanyController extends Controller
      */
     public function update(StoreCompany $request, Company $company)
     {
-        $company->update($request->all());
+        // @todo allow company to change logo
+        $company->update($request->only(['email', 'name', 'website']));
 
         return redirect()->route('companies.show', ['company' => $company->id]);
     }
