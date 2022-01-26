@@ -5,8 +5,6 @@ services:
       context: ./docker/app
       dockerfile: Dockerfile
     image: vessel/app
-    ports:
-     - "${APP_PORT}:80"
     environment:
       CONTAINER_ENV: "${APP_ENV}"
       XDEBUG_HOST: "${XDEBUG_HOST}"
@@ -15,10 +13,11 @@ services:
       - .:/var/www/html
     labels:
       - 'traefik.enable=true'
-      - 'traefik.http.routers.mini-crm.rule=Host(`mini-crm.localhost`)'
-      - 'traefik.http.routers.mini-crm.entrypoints=web'
+      - 'traefik.http.routers.mini-crm.rule=Host(`crm.shaiful.my`)'
+      - 'traefik.http.routers.mini-crm.entrypoints=websecure'
       - 'traefik.http.services.mini-crm.loadbalancer.server.port=80'
       - 'traefik.docker.network=web'
+      - "traefik.http.routers.mini-crm.tls.certresolver=myresolver"
     networks:
       - vessel
       - web

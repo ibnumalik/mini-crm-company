@@ -41,7 +41,7 @@ import AccountLockIcon from 'icons/AccountLock';
 import AlertOctagonIcon from 'icons/AlertOctagon';
 import AccountGroupIcon from 'icons/AccountGroup';
 
-import RouterLink from './components/RouterLink';
+//import RouterLink from './components/RouterLink';
 
 import 'icons/styles.css';
 
@@ -98,7 +98,7 @@ function registerVueComponent(components) {
 registerVueComponent(components);
 registerVueComponent(icons);
 // https://bootstrap-vue.org/docs/reference/router-links#router-component-name
-Vue.component('RouterLink', RouterLink);
+//Vue.component('RouterLink', RouterLink);
 
 InertiaProgress.init();
 Vue.prototype.$route = route;
