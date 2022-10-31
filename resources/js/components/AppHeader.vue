@@ -76,10 +76,8 @@
           <template slot="button-content">
             <img class="avatar" src="" />
           </template>
-          <b-dropdown-item>
-            <Link :href="$route('employees.index')" class="card-link">
-              Profile
-            </Link>
+          <b-dropdown-item router-component-name="router-link" :to="$route('profile')">
+            Profile
           </b-dropdown-item>
           <b-dropdown-item-button v-on:click="logout">Signout</b-dropdown-item-button>
           <form ref="logoutForm" class="d-none" :action="$route('logout')" method="post">

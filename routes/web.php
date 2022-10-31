@@ -18,6 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', function() {
+    return inertia('profile');
+})->name('profile');
 
 Route::resource('companies', 'CompanyController');
 Route::resource('employees', 'EmployeeController');
