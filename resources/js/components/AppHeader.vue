@@ -1,10 +1,8 @@
 <template>
   <b-navbar class="fixed-top" toggleable="md" type="dark" variant="info">
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-    <div
-      class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center"
-    >
-        <Link class="navbar-brand" :href="$route('home')">crm</Link>
+    <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+      <Link class="navbar-brand" :href="$route('home')">crm</Link>
     </div>
     <b-collapse is-nav id="nav_collapse">
       <!-- Right aligned nav items -->
@@ -16,20 +14,24 @@
               <!-- <span class="count">7</span> -->
             </div>
           </template>
+        </b-nav-item-dropdown>
+        <b-nav-item-dropdown right>
+          <template slot="button-content">
+            <div class="count-indicator">
+              <bell-ring-icon></bell-ring-icon>
+              <span class="count">4</span>
+            </div>
+          </template>
           <b-dropdown-item class="preview-item" href="#">
             <p class="mb-0 font-weight-normal float-left">
               You have 4 new notifications
             </p>
-            <span class="badge badge-pill badge-warning float-right"
-              >View all</span
-            >
+            <span class="badge badge-pill badge-warning float-right">View all</span>
           </b-dropdown-item>
-          <b-dropdown-item class="preview-item" href="#">
+          <b-dropdown-item class="preview-item">
             <div class="preview-thumbnail">
               <div class="preview-icon bg-success">
-                <alert-circle-outline-icon
-                  class="mx-0"
-                ></alert-circle-outline-icon>
+                <alert-circle-outline-icon class="mx-0"></alert-circle-outline-icon>
               </div>
             </div>
             <div class="preview-item-content">
@@ -41,12 +43,10 @@
               </p>
             </div>
           </b-dropdown-item>
-          <b-dropdown-item class="preview-item" href="#">
+          <b-dropdown-item class="preview-item">
             <div class="preview-thumbnail">
               <div class="preview-icon bg-warning">
-                <comment-text-outline-icon
-                  fill-color="#fff"
-                ></comment-text-outline-icon>
+                <comment-text-outline-icon fill-color="#fff"></comment-text-outline-icon>
               </div>
             </div>
             <div class="preview-item-content">
@@ -56,7 +56,7 @@
               </p>
             </div>
           </b-dropdown-item>
-          <b-dropdown-item class="preview-item" href="#">
+          <b-dropdown-item class="preview-item">
             <div class="preview-thumbnail">
               <div class="preview-icon bg-info">
                 <email-outline-icon></email-outline-icon>
@@ -74,25 +74,16 @@
         </b-nav-item-dropdown>
         <b-nav-item-dropdown right>
           <template slot="button-content">
-            <div class="count-indicator">
-              <bell-ring-icon></bell-ring-icon>
-              <span class="count">4</span>
-            </div>
+            <img class="avatar" src="" />
           </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item v-on:click="logout">Signout</b-dropdown-item>
-          <form
-            ref="logoutForm"
-            class="d-none"
-            :action="$route('logout')"
-            method="post"
-          >
+          <b-dropdown-item router-component-name="router-link" :to="$route('profile')">
+            Profile
+          </b-dropdown-item>
+          <b-dropdown-item-button v-on:click="logout">Signout</b-dropdown-item-button>
+          <form ref="logoutForm" class="d-none" :action="$route('logout')" method="post">
             <input type="hidden" name="_token" :value="csrf" />
           </form>
         </b-nav-item-dropdown>
-        <b-nav-item href="#">
-          <img class="avatar" src="" />
-        </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>

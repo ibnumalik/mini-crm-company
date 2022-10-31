@@ -12,6 +12,7 @@ import {
   BContainer,
   BDropdownDivider,
   BDropdownItem,
+  BDropdownItemButton,
   BListGroup,
   BListGroupItem,
   BNav,
@@ -25,6 +26,9 @@ import {
   BCardTitle,
   BCardGroup,
   BTable,
+  BFormInput,
+  BFormGroup,
+  BForm
 } from 'bootstrap-vue';
 import ImageFilterIcon from 'icons/ImageFilter';
 import EmailOutlineIcon from 'icons/EmailOutline';
@@ -76,6 +80,7 @@ const components = {
   BContainer,
   BDropdownDivider,
   BDropdownItem,
+  BDropdownItemButton,
   BListGroup,
   BListGroupItem,
   BNav,
@@ -87,6 +92,9 @@ const components = {
   BNavItemDropdown,
   BRow,
   Link,
+  BFormGroup,
+  BFormInput,
+  BForm
 };
 
 function registerVueComponent(components) {
