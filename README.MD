@@ -14,12 +14,20 @@ To get started with development of this project, you can follow this step:
 
 ### Easy start with Docker
 
-Prefer docker to boot up application? Then follow this easy step.
+Prefer docker to boot up application? Then follow this easy step. The docker-compose in this project will need the following:
 
-1. Make sure you have run `composer install`.
-2. Start app by running `./vessel start`.
+1. Traefik. It need to be on `web` networks. Or change the compose file with your own traefik network.
+2. A running instance of mysql database in `mariadb_database` network. Or add mysql service in the compose if you need one.
 
-That's it! You can open http://localhost to view the app.
+If you don't want to use traefik, then just uncomment the ports in nginx service.
+
+Run this in terminal to get up and running.
+
+```
+docker-compose up -d
+```
+
+That's it! You can open mini-crm.localhost or http://localhost:8082 to view the app.
 
 ## Tasks
 

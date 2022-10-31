@@ -1,0 +1,48 @@
+version: '2'
+
+services:
+  app:
+    build:
+      args:
+        user: ${USER}
+        uid: ${USERID}
+      context: .
+      dockerfile: Dockerfile
+    image: mini-crm
+    volumes:
+      - .:/var/www
+    networks:
+      - crm
+      - web
+      - mariadb_database
+      - redis
+
+  nginx:
+    image: nginx:1.17-alpine
+    container_name: mini-crm-nginx
+    restart: unless-stopped
+    # ports:
+    #   - 8082:80
+    volumes:
+      - ./:/var/www
+      - ./infra/nginx:/etc/nginx/conf.d
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.mini-crm.rule=Host(`mini-crm.localhost`) || Host(`mini-crm.local`)'
+      - 'traefik.http.routers.mini-crm.entrypoints=web'
+      - 'traefik.http.services.mini-crm.loadbalancer.server.port=80'
+      - 'traefik.docker.network=web'
+      # - 'traefik.http.routers.whoami.tls.certresolver=myresolver'
+    networks:
+      - crm
+      - web
+
+networks:
+  crm:
+    driver: "bridge"
+  web:
+    external: true
+  mariadb_database:
+    external: true
+  redis:
+    external: true
