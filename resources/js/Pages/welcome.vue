@@ -8,6 +8,7 @@
           <div class="hero-inner">
             <div class="hero-copy">
               <h1 class="hero-title mt-0">Manage your companies</h1>
+              <h1 class="hero-title mt-0">Manage your companies</h1>
               <p class="hero-paragraph">
                 Whether you are a small business owner or heading multiple
                 businesses, there would always be a number of activities going

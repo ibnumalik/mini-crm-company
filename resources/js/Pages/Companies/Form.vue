@@ -105,7 +105,13 @@ export default {
   },
   mounted() {
     if (this.company) {
-      this.form = this.$inertia.form({ ...this.company });
+      this.form = this.$inertia.form({
+        name: this.company.name,
+        email: this.company.email,
+        website: this.company.website,
+      });
+
+      this.companyLogoPreview = `/storage/images/${this.company.logo_path}`
     }
   },
   computed: {

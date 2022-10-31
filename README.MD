@@ -49,3 +49,9 @@ That's it! You can open http://localhost to view the app.
 
 - [ ] Make the project multi-language (using resources/lang folder)
 - [ ] Basic testing with phpunit (I know some would argue it should be the basics, but I disagree)
+
+## Additional
+
+- [ ] Use cloud storage to store profile picture
+- [ ] Profile page
+- [ ] Use data table in employee list

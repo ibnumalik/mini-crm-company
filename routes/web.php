@@ -21,3 +21,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('companies', 'CompanyController');
 Route::resource('employees', 'EmployeeController');
+Route::resource('departments', 'DepartmentController');
+
+Route::get('/url', function ()
+{
+    return [
+        'url' => url('/'),
+        'config' => config('app.url'),
+        'env' => env('APP_URL')
+    ];
+});
